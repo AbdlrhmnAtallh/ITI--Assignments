@@ -6,9 +6,9 @@ namespace Day2.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Img { get; set; }
+        public string? Img { get; set; }
         public int Salary { get; set; }
-        public string Adrress { get; set; }
+        public string? Adrress { get; set; }
 
         [ForeignKey("department")]
         public int DepartmentId { get; set; }

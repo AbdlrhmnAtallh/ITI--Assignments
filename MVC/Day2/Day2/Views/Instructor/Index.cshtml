@@ -1,0 +1,23 @@
+﻿@model List<Instructor>
+
+
+    
+<table class="table sticky-top">
+    <tr>
+        <th>Id </th>
+        <th>Name</th>
+        <th>Department Id</th>
+        <th>Salary</th>
+        <th>Course Id</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.DepartmentId</td>
+            <td>@item.Salary</td>
+            <td>@item.CourseId</td>
+        </tr>
+    }
+</table>

@@ -1,19 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Day2.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Day2.Controllers
 {
     public class InstructorController : Controller
     {
+        
         public IActionResult Index()
         {
-            return View();
+            List<Instructor> instrctor = InstructorList.instructorsList.ToList();
+            return View(instrctor);
         }
 
         public IActionResult Detail(int id )
         {
-
-            return View();
+            var item = InstructorList.instructorsList.FirstOrDefault( x => x.Id == id );
+            return View(item);
         }
+
 
     }
 }
