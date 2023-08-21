@@ -1,6 +1,7 @@
 ﻿using Day3.Models;
 using Day3.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Diagnostics;
 
 namespace Day3.Controllers
@@ -14,29 +15,47 @@ namespace Day3.Controllers
             _logger = logger;
         }
 
+       
+        
+        public IActionResult Students()
+        {
+            // Adding Values 
+            List<Student> StudentsList = new List<Student>()
+            {
+                new Student(){Id = 1 , Name="StudentA",CourseId=100},
+                new Student(){Id = 2 , Name="StudentB",CourseId=101},
+                new Student(){Id = 3 , Name="StudentC",CourseId=102},
+                new Student(){Id = 4 , Name="StudentD",CourseId=100},
+            };
+            List<Course> CoursesList = new List<Course>()
+            {
+                new Course(){Id = 101 , Name = "ASP.Net Mvc "},
+                new Course(){Id = 100 , Name = "C#"},
+                new Course(){Id = 102 , Name = "Entity FrameWork"}
+            };
+
+
+           List<StudentsWithCoursesViewModel> studentsWithCourses = new List<StudentsWithCoursesViewModel>();
+            foreach(var item in StudentsList)
+            {
+                studentsWithCourses.Add(new StudentsWithCoursesViewModel() { StudentName = item, CourseName = CoursesList.FirstOrDefault(s => s.Id == item.CourseId) });
+            }
+            
+            return View(studentsWithCourses);
+        }
+
+
+
+
         public IActionResult Index()
         {
-            List<Student> students = new List<Student>();
-            List<Student> LL = Student.StudentsList;
-            LL.Add(new Student() { Id = 3, Name = "StudentC" });
-            var ii = Instructor.InstructorList;
-            ii.Add(new Instructor() { Id = 3, Name = "InstructorC" });
-
-
-            StudentNameWithInstructorNameViewModel StudentInstructor
-                = new StudentNameWithInstructorNameViewModel();
-
-
-
-            return View(ii);
+            return View();
         }
 
         public IActionResult Privacy()
         {
-            var instructors = Instructor.InstructorList;
-            instructors.Add(new Instructor() { Id = 3, Name = "InstructorC" });
-
-            return View(instructors);
+            
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
