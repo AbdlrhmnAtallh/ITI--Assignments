@@ -8,6 +8,10 @@ namespace Day3
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSession(c =>
+            {
+                c.IdleTimeout = TimeSpan.FromMinutes(3);
+            });
 
             var app = builder.Build();
 
@@ -23,7 +27,7 @@ namespace Day3
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
 
             app.MapControllerRoute(

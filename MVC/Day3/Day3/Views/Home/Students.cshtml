@@ -4,8 +4,8 @@
 <table class="table table-dark">
         <thead>
     <tr>
-        <th>Student Name </th>
-        <th>Course Name </th>
+            <th><h1>Student Name </h1></th>
+            <th><h1>Course Name </h1></th>
     </tr>
     </thead>
     <tbody>
@@ -13,10 +13,12 @@
 @foreach(var item in Model)
 {
     <tr>
-                <td><h1> @item.StudentName.Name</h1></td>
-                <td> <h1> @item.CourseName.Name</h1></td>
+                <td> @item.StudentName.Name</td>
+                <td> @item.CourseName.Name</td>
     </tr>
 }
     </tbody>
 </table>
+<h4>Student Count: @TempData["Tempdata1"] </h4>
+<h4>Courses Count: @TempData["Tempdata2"] </h4>
 
