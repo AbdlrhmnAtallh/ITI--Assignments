@@ -1,51 +1,27 @@
 ﻿
 @model Player
 
-<form action="SaveUpdates">
+<form asp-action="SaveUpdates">
     <div>
-        <label for="Id">Id</label>
-        <input type="number" name="Id" id="Id" value="@Model.Id" class="form-control" readonly />
+        <label asp-for="Id" class="control-label">Id</label>
+        <input asp-for="Id"class="form-control" readonly/>
     </div>
     <div>
-        <label for="Name">Name</label>
-        <input type="text" name="Name" id="Name" value="@Model.Name" class="form-control" />
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" />
     </div>
     <div>
-        <label for="Age">Age</label>
-        <input type="text" name="Age" id="Age" value="@Model.Age" class="form-control" />
+        <label asp-for="Age" class="control-label">Age</label>
+        <input asp-for="Age" class="form-control" />
     </div>
-    <div>
-        <label for="FC">FC</label>
-      @*  <input type="text" name="FC" id="FC" value="@Model.FC" class="form-control" />*@
-        <select name="FC" id="FC" class="form-control">
-            @foreach(var item in ViewBag.FC)
-            {
-                if (item.Id == Model.FC)
-                {
-                    <option value="@item.Id" selected>@item.Name</option>
-                }
-                else
-                {
-                    <option value="@item.Id">@item.Name</option>
-                }
-            }
+    <div> 
+        <label asp-for="FC" class="form-control">FC</label>
+        <select asp-for="FC" asp-items="@(new SelectList(ViewBag.FC,"Id","Name"))" class="form-control">
+            <option value="">
+                Select Department
+            </option>
         </select>
-
-
-
-        @*<select name="Dept" id="Dept" class="form-control">
-            @foreach (var departmentItem in ViewBag.Depts)
-            {
-                if (departmentItem.Id == Model.Dept)//
-                {
-                    <option value="@departmentItem.Id" selected>@departmentItem.Name</option>
-                }
-                else
-                {
-                    <option value="@departmentItem.Id">@departmentItem.Name</option>
-                }
-            }
-        </select>*@
     </div>
-    <input type="submit" class="btn btn-sucess" value="Save" />
+    
+    <input type="submit" value="save" class="btn btn-primary" />
 </form>

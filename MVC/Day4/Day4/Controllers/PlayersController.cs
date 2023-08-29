@@ -30,6 +30,7 @@ namespace Day4.Controllers
             var player = Context.Player.FirstOrDefault(e => e.Id == id);
             return View(player);
         }
+        
         public IActionResult SaveUpdates(int id ,Player NewPlayer)
         {
             Player player = Context.Player.FirstOrDefault(p => p.Id == id);

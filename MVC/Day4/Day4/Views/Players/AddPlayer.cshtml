@@ -13,13 +13,6 @@
         <input asp-for="Age" type="number" name="Age" id="Age" class="form-control" />
     </div>
     <div> 
-      @*  <label asp-for="FC" class="form-control">FC</label>
-        <select asp-for="FC">
-            @foreach (var item in ViewBag.FC)
-            {
-                 <option asp-items="@item.Id" class="control-label">@item.Name</option>
-            }
-        </select>*@
         <label asp-for="FC" class="control-label"></label>
         <select asp-for="FC" asp-items="@(new SelectList(ViewBag.FC,"Id","Name"))" class="form-control">
             <option value="">
