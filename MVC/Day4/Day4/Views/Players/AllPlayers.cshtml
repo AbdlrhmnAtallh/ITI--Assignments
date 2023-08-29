@@ -1,0 +1,76 @@
+﻿@model List<Player>
+
+    <style>
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    thead {
+        background-color: #337ab7;
+        color: #fff;
+    }
+
+    th, td {
+        padding: 10px 15px;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+    </style>
+
+<table class="">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>FC</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.FootballClub.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br /><br /><br />
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in ViewBag.FCBag)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

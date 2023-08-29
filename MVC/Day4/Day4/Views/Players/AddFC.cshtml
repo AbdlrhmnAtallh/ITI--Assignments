@@ -1,0 +1,16 @@
+﻿
+@model FootballClub
+
+<form action="SaveFC">
+
+    <div>
+        <label asp-for="Id" class="form-control-plaintext">Id</label>
+        <input asp-for="Id" class="col-form-label" readonly />
+    </div>
+    <div>
+        <label asp-for="Name" class="form-check">Name</label>
+        <input asp-for="Name" class="active"/>
+    </div>
+    <input type="submit" value="save" class="btn btn-primary" />
+
+</form>
