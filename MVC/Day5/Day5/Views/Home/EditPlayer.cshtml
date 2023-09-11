@@ -1,0 +1,31 @@
+﻿
+@model Player 
+
+<form asp-action="SaveUpdates">
+    <label for="Id" class="form-control-plaintext">Id</label>
+    <input asp-for="Id" class="form-control" readonly />
+    <label for="Name" class="form-control-plaintext">Name</label>
+    <input asp-for="Name" class="form-control" />
+
+    <label for="FC" class="form-control-plaintext">FC</label>
+   @* <select asp-for="FC" class="form-control">
+        @foreach(var item in ViewBag.FC)
+        {
+            if(item.Id == Model.FC)
+            {
+                <option value="@item.Id" selected>@item.Name</option>
+            }
+            else
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        }
+    </select>*@
+    @{
+        // And this is a DropDownList With Html Helper
+        SelectList FCList = new SelectList(ViewBag.FC, "Id", "Name", Model.Id);
+    }
+    @Html.DropDownListFor(e=>e.FC,FCList)
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,33 @@
+﻿@model List<Player>
+
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>FC</th>
+            <th></th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                @foreach (var bag in ViewBag.FCL)
+                {
+                    if (item.FC == bag.Id)
+                    {
+                        <td>@bag.Name</td>
+                    }
+                }
+                <td><a href="EditPlayer/@item.Id" style="text-decoration:none;color:crimson">Edit</a></td>
+                <td><a href="Delete/@item.Id" style="text-decoration:none;color:crimson">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
