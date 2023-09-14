@@ -1,14 +1,28 @@
-﻿
-@model Player 
+﻿@model Player 
+
+@{
+    SelectList FCList = new SelectList(ViewBag.FC, "Id", "Name", Model.Id);
+}
+
+
+<h2 style="font-family:Arial, Helvetica, sans-serif;color:chartreuse;font-weight:800">Tag Helper</h2>
+<br />
+
 
 <form asp-action="SaveUpdates">
-    <label for="Id" class="form-control-plaintext">Id</label>
+
+    <label asp-for="Id" class="form-control"></label>
     <input asp-for="Id" class="form-control" readonly />
-    <label for="Name" class="form-control-plaintext">Name</label>
+
+    <label asp-for="Name" class="form-control"></label>
     <input asp-for="Name" class="form-control" />
 
-    <label for="FC" class="form-control-plaintext">FC</label>
-   @* <select asp-for="FC" class="form-control">
+    <label for="FC" class="form-control"></label>
+    <select asp-for="FC" asp-items="FCList"></select>
+
+    <br />
+    <h6>Pure Html List</h6>
+    <select for="FC" class="form-control">
         @foreach(var item in ViewBag.FC)
         {
             if(item.Id == Model.FC)
@@ -20,12 +34,25 @@
                 <option value="@item.Id">@item.Name</option>
             }
         }
-    </select>*@
-    @{
-        // And this is a DropDownList With Html Helper
-        SelectList FCList = new SelectList(ViewBag.FC, "Id", "Name", Model.Id);
-    }
-    @Html.DropDownListFor(e=>e.FC,FCList)
+    </select>
+    <br />
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+<br /><br />
+<h2 style="font-family:Arial, Helvetica, sans-serif;color:chartreuse;font-weight:800">Tag Helper</h2>
+<br />
+@using (Html.BeginForm("SaveUpdates","Home" , new{@class="form-control"}))
+{
+    @Html.LabelFor(e=>e.Id,new{@class="control-label"})
+    @Html.EditorFor(e=>e.Id,new{@class="form-control"})
+    <br />
+    @Html.LabelFor(e=>e.Name,new{@class="control-label"})
+    @Html.EditorFor(e=>e.Name,new{@class="form-control"})
+    <br />
+    @Html.LabelFor(e=>e.FC, new{@class="control-label"})
+    @Html.DropDownListFor(e=>e.FC,FCList,new{@class="form-control"})
+    <br />
+    <button type="submit" class="btn btn-success">Save</button>
+}

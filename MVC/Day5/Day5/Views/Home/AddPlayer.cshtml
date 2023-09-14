@@ -1,21 +1,57 @@
 ﻿@model Player
 
+@{ 
+    SelectList FCList = new SelectList(ViewBag.FC, "Id", "Name");
+}
+
+
+<h2 style="font-family:Arial, Helvetica, sans-serif;color:cadetblue;font-weight:800">Tag Helper</h2>
+<br />
+
 <form asp-action="SaveNewPlayer">
-    <label for="Id" class="form-control-plaintext">Id</label>
+
+    <label asp-for="Id" class="control-label"></label>
     <input asp-for="Id" class="form-control" />
-    <label for="Name" class="form-control-plaintext">Name</label>
+
+    <label asp-for="Name" class="control-label"></label>
     <input asp-for="Name" class="form-control" />
 
-    <select asp-for="FC" class="form-control"> 
-        <option selected>Select-FC</option>
-        @foreach(var item in ViewBag.FC)
-        {
-            <option value="@item.Id">@item.Name</option>
-        }
+    <label asp-for="FC"></label>
+    <select asp-for="FC" asp-items="FCList" class="form-control">
+        <option disabled selected hidden>Select-FC</option>
     </select>
 
-
-
-
+    @*
+         <select asp-for="FC" class="form-control">
+        <option disabled selected hidden>Select-FC</option>
+    @foreach (var item in ViewBag.FC)
+    {
+                <option value="@item.Id">@item.Name</option>
+    }
+    </select>
+    *@
     <input type="submit" class="btn btn-success" />
 </form>
+
+<br /><br />
+
+
+<h2 style="font-family:Arial, Helvetica, sans-serif;color:cadetblue;font-weight:800">Html Helper</h2>
+<br />
+
+@using(Html.BeginForm("SaveNewPlayer","Home"))
+{
+
+    @Html.LabelFor(e=>e.Id , new{@class="control-label"})
+    @Html.EditorFor(e =>e.Id, new{@class="form-control"})
+    <br />
+
+    @Html.LabelFor(e=>e.Name,new{style="color:red", @class="control-label"})
+    @Html.EditorFor(e =>e.Name, new{style="color:red", @class="form-control"})
+    <br />
+    
+    @Html.LabelFor(e=>e.FC)
+    @Html.DropDownListFor(e=>e.FC,FCList,"Select-List",new{@class="form-control"})
+   
+    <button type="submit" class="btn btn-secondary">Save</button>
+}
