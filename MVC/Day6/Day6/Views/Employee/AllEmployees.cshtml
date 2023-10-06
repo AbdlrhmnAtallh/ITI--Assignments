@@ -1,0 +1,33 @@
+﻿
+@model List<Employee>
+
+<table class="table table-primary">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                @foreach(var i in ViewBag.Dept)
+                {
+                    if(item.Dept == i.Id)
+                    {
+                        <td>@i.Name</td>
+                    }
+                }
+                <td><a asp-controller="Employee" asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

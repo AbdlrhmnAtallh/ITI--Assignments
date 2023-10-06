@@ -1,0 +1,76 @@
+﻿
+@model Employee
+
+@{
+    Layout = "_Layout";
+
+    ViewBag.Title = "";
+    if (Model == null)
+    {
+        ViewBag.Title = "SaveNewEmployee";
+    }
+    else
+    {
+        ViewBag.Title = "SaveEdit";
+    }
+    
+}
+
+@{
+    // Dropdown List 
+    SelectList items;
+    if (Model != null  )
+    {
+        items = new SelectList(ViewBag.Dept, "Id", "Name", Model.Dept);
+    }
+    else
+    {
+        items = new SelectList(ViewBag.Dept, "Id", "Name");
+        
+    }
+}
+
+<form asp-action="@ViewBag.Title" >
+    
+    @*<div asp-validation-summary="All"></div>*@
+
+    <div>
+        <span asp-validation-for="Id" class="text-danger"></span><br />
+
+        <label asp-for="Id" class="control-label"></label>
+        @if (ViewBag.Title == "SaveNewEmployee" || Model.Id==0)
+        {
+            <input asp-for="Id" class="form-control" />
+        }
+        else
+        {
+            <input asp-for="Id" readonly class="form-control" />
+        }
+        
+    </div>
+    
+    <div>
+        <span asp-validation-for="Name" class="text-danger"></span><br />
+
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+
+    </div>
+    
+    <div>
+        <span asp-validation-for="Age"></span>
+        <label asp-for="Age" class="control-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div>
+        <span asp-validation-for="Dept" class="text-danger"></span><br />
+
+        <label asp-for="Dept" class="control-label"></label>
+        <select asp-for="Dept" asp-items="items" class="form-control">
+        </select>
+
+    </div>
+    
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
