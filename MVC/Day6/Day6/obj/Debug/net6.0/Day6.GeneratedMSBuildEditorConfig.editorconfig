@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Day6
 build_property.RootNamespace = Day6
-build_property.ProjectDir = F:\Work_Space\ASP.Net_Core\Day6\Day6\
+build_property.ProjectDir = F:\Work_Space\ASP.Net_Core\ITI\MVC\Day6\Day6\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Work_Space\ASP.Net_Core\Day6\Day6
+build_property.MSBuildProjectDirectory = F:\Work_Space\ASP.Net_Core\ITI\MVC\Day6\Day6
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Employee/AddEmployee.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Employee/AddEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Employee/AllEmployees.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Employee/AllEmployees.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWxsRW1wbG95ZWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Home/Index.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Home/Privacy.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Shared/Error.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Shared/_MyLayout.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Shared/_MyLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/_ViewImports.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/_ViewStart.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Work_Space/ASP.Net_Core/Day6/Day6/Views/Shared/_Layout.cshtml]
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/Day6/Day6/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-myajwoqmt5
