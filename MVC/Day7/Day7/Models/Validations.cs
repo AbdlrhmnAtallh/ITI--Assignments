@@ -1,5 +1,4 @@
 ﻿
-
 using System.ComponentModel.DataAnnotations;
 
 namespace Day7.Models
@@ -15,7 +14,6 @@ namespace Day7.Models
             return new ValidationResult(value + " Not Allowed");
            
         }
-
 
     }
 }
