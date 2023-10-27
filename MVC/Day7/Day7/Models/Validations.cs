@@ -6,8 +6,9 @@ namespace Day7.Models
     public class Validations:ValidationAttribute
     {
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
-        {
-            if (value == "Cairo" || value == "Alexandria")
+       {
+            string Value = (string)value;
+            if (Value == "Cairo" || Value == "Alexandria")
             {
                 return ValidationResult.Success;
             }

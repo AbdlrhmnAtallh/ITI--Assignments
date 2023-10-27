@@ -14,7 +14,8 @@ namespace Day7.Controllers
         {
             if (ModelState.IsValid)
             {
-                Employees.Add(new Employee { Id = e.Id, Name = e.Name });
+                Employees.Add(new Employee { Id = e.Id, Name = e.Name , City =e.City});
+                Employee.Employees.Add(new Employee { Id = e.Id, Name = e.Name, City = e.City });
                 return View("All",Employees);
             }
             return View("Add");
