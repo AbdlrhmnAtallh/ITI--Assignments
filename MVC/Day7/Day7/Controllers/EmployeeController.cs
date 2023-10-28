@@ -6,6 +6,15 @@ namespace Day7.Controllers
     {
         List<Employee> Employees = new List<Employee>();
         
+        public IActionResult NameExists(string Name)
+        {
+            var employee = Employees.FirstOrDefault(x => x.Name == Name);
+            if (employee == null)
+            {
+                return Json(true);
+            }
+            return Json(false);
+        }
         public IActionResult Add()
         {
             return View();
