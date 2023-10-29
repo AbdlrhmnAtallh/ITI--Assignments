@@ -4,7 +4,7 @@ namespace Day7.Controllers
 {
     public class EmployeeController : Controller
     {
-        List<Employee> Employees = new List<Employee>();
+        public static List<Employee> Employees = new List<Employee>();
         
         public IActionResult NameExists(string Name)
         {
@@ -14,6 +14,16 @@ namespace Day7.Controllers
                 return Json(true);
             }
             return Json(false);
+        }
+
+        public IActionResult CityLetters(string City)
+        {
+            if (City.Length < 5)
+            {
+                return Json(false);
+            }
+            else 
+                return Json(true);
         }
         public IActionResult Add()
         {
