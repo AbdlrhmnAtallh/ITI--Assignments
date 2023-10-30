@@ -43,5 +43,23 @@ namespace Day7.Controllers
         {
             return View(Employees);
         }
+
+        public IActionResult Edit(int id)
+        {
+            Employee e = Employees.FirstOrDefault(i => i.Id == id);
+            return View(e);
+        }
+        public IActionResult SaveEdit(Employee e)
+        {
+            if (ModelState.IsValid)
+            {
+                Employee emp = Employees.FirstOrDefault(i=>i.Id == e.Id);
+                emp.Id = e.Id;
+                emp.Name = e.Name;
+                emp.City = e.City;
+                return View("All");
+            }
+            return View("Edit", e);
+        }
     }
 }

@@ -7,6 +7,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>City</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.City</td>
+                <td><a asp-action="Edit" asp-route-id="@item.Id" asp-controller="Employee" class="btn btn-success">Edit</a></td>
             </tr>
         }
     </tbody>
