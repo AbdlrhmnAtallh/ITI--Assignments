@@ -6,15 +6,40 @@ namespace Day7.Controllers
     {
         public static List<Employee> Employees = new List<Employee>();
         
-        public IActionResult NameExists(string Name)
+        public IActionResult NameExists(string Name , int id )
         {
-            var employee = Employees.FirstOrDefault(x => x.Name == Name);
-            if (employee == null)
+            Employee e = Employees.FirstOrDefault(i => i.Id == id);
+            bool IdEqual0 = false;
+            if(e == null)
             {
-                return Json(true);
+                IdEqual0 = true;
             }
-            return Json(false);
+            if (IdEqual0)
+            {
+                var employee = Employees.FirstOrDefault(x => x.Name == Name);
+                if (employee == null)
+                {
+                    return Json(true);
+                }
+                return Json(false);
+            }
+            else
+            {
+                var employee = Employees.FirstOrDefault(x => x.Name == Name);
+                if (employee == null)
+                {
+                    return Json(true);
+                }
+
+                if(employee.Id == id)
+                {
+                    return Json(true);
+                }
+                return Json(false);
+            }
         }
+
+
 
         public IActionResult CityLetters(string City)
         {
@@ -57,7 +82,7 @@ namespace Day7.Controllers
                 emp.Id = e.Id;
                 emp.Name = e.Name;
                 emp.City = e.City;
-                return View("All");
+                return View("All",Employees);
             }
             return View("Edit", e);
         }

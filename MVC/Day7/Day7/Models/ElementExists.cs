@@ -8,7 +8,7 @@ namespace Day7.Models
         {
             Employee e = validationContext.ObjectInstance as Employee;
             var x = Employee.Employees.FirstOrDefault(i => i.Id == e.Id);
-                if (x !=null)
+                if (x !=null && e.Id!=x.Id)
                 {
                     return new ValidationResult("This item already exists");
                 }

@@ -8,7 +8,7 @@ namespace Day7.Models
         [CSV(n =30)]
         [ElementExists]
         public int Id { get; set; }
-        [Remote (action: "NameExists", controller:"Employee",ErrorMessage = " This item already exists ")]
+        [Remote (action: "NameExists", controller:"Employee",ErrorMessage = " This item already exists ", AdditionalFields = "Id")]
         [MaxLength(10)]
         public string Name { get; set; }
         [Validations]
