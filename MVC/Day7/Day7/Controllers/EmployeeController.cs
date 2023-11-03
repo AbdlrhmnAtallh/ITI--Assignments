@@ -5,7 +5,10 @@ namespace Day7.Controllers
     public class EmployeeController : Controller
     {
         public static List<Employee> Employees = new List<Employee>();
-        
+
+        public static int[] Ids = new int[10];
+        public static string[] Names = new string[10];
+        int List = 0;
         public IActionResult NameExists(string Name , int id )
         {
             Employee e = Employees.FirstOrDefault(i => i.Id == id);
@@ -60,6 +63,10 @@ namespace Day7.Controllers
             {
                 Employees.Add(new Employee { Id = e.Id, Name = e.Name , City =e.City});
                 Employee.Employees.Add(new Employee { Id = e.Id, Name = e.Name, City = e.City });
+                Ids[List] = e.Id;
+                Names[List] = e.Name;
+                List++;
+                ViewBag.Ids = Ids;
                 return View("All",Employees);
             }
             return View("Add");
