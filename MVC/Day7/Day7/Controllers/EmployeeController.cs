@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Day7.Models;
+//using AspNetCore;
+
 namespace Day7.Controllers
 {
     public class EmployeeController : Controller
@@ -90,6 +92,19 @@ namespace Day7.Controllers
                 return View("All",Employees);
             }
             return View("Edit", e);
+        }
+        public IActionResult Delete(int id)
+        {
+            var EmployeeToRemove = Employees.FirstOrDefault(e => e.Id == id);
+            if (EmployeeToRemove != null)
+            {
+                Employees.Remove(EmployeeToRemove);
+                return RedirectToAction("All");
+            }
+            else
+                return NotFound();
+
+
         }
     }
 }

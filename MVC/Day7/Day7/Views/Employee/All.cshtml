@@ -8,6 +8,7 @@
             <th>Name</th>
             <th>City</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -18,9 +19,25 @@
                 <td>@item.Name</td>
                 <td>@item.City</td>
                 <td><a asp-action="Edit" asp-route-id="@item.Id" asp-controller="Employee" class="btn btn-success">Edit</a></td>
+                <td>
+                    <a asp-action="Delete"
+                    asp-controller="Employee"
+                    asp-route-id="@item.Id" onclick="ConfirmDelete()" class="btn btn-danger">
+                        Delete
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
-@*<partial name="_DisplayInCards" />*@
+
+<script>
+    function ConfirmDelete(){
+        var accept = confirm("Are You Sure You Want To Delete ?");
+        if(accept == false)
+        event.preventDefault(); // prevent going to server 
+    }
+</script>
+
+<partial name="_DisplayInCards" />
