@@ -9,36 +9,38 @@ namespace Day7.Controllers
         public static int[] Ids = new int[10];
         public static string[] Names = new string[10];
         int List = 0;
+
+
         public IActionResult NameExists(string Name , int id )
         {
             Employee e = Employees.FirstOrDefault(i => i.Id == id);
             bool IdEqual0 = false;
             if(e == null)
             {
-                IdEqual0 = true;
+                IdEqual0 = true; // id eqaul true so this is a new record 
             }
-            if (IdEqual0)
+            if (IdEqual0) // new record
             {
                 var employee = Employees.FirstOrDefault(x => x.Name == Name);
-                if (employee == null)
+                if (employee == null) // new record with a non-repeating name
                 {
-                    return Json(true);
+                    return Json(true); 
                 }
-                return Json(false);
+                return Json(false);// new record with a dublicate name
             }
-            else
+            else // Editing an existing record
             {
                 var employee = Employees.FirstOrDefault(x => x.Name == Name);
-                if (employee == null)
+                if (employee == null) // Valid new name
                 {
                     return Json(true);
                 }
 
-                if(employee.Id == id)
+                if(employee.Id == id) // Duplicate Name but with the same id 
                 {
                     return Json(true);
                 }
-                return Json(false);
+                return Json(false); // Not Valid Name
             }
         }
 
