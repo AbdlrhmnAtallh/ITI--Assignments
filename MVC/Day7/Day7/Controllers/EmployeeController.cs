@@ -64,14 +64,10 @@ namespace Day7.Controllers
             if (ModelState.IsValid)
             {
                 Employees.Add(new Employee { Id = e.Id, Name = e.Name , City =e.City});
-                Employee.Employees.Add(new Employee { Id = e.Id, Name = e.Name, City = e.City });
-                Ids[List] = e.Id;
-                Names[List] = e.Name;
-                List++;
-                ViewBag.Ids = Ids;
+               
                 return View("All",Employees);
             }
-            return View("Add");
+            return View("Add",e);
         }
         public IActionResult All()
         {

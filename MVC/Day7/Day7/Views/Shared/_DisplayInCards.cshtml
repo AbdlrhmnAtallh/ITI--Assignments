@@ -1,0 +1,25 @@
+﻿@model List<Employee>
+
+@foreach(var item in Model){
+
+
+    <div class="card" style="width: 18rem;">
+        @item.Name
+        <div class="card-header">
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <span style="font-weight:300;color:red">Id</span>
+                @item.Id                           
+            </li>                                  
+            <li class="list-group-item">           
+                <span style="font-weight:300;color:red">Name</span>
+                @item.Name                         
+            </li>                                  
+            <li class="list-group-item">           
+                <span style="font-weight:300;color:red">City</span>
+                @item.City
+            </li>
+        </ul>
+    </div>
+}
