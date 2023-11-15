@@ -1,0 +1,18 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<div style="background-color:black">
+    
+</div>
+<input type="button" onclick="AjaxCall()" value="Employees" />
+<script>
+    function AjaxCall()
+    {
+        $.ajax({
+            url: "/Employee/TestPartial",
+            success : function(result){
+                $(#div1).html(result);
+            }
+        });
+    }
+</script>

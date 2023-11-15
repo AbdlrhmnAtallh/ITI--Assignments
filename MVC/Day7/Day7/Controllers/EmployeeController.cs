@@ -48,8 +48,11 @@ namespace Day7.Controllers
 
         public IActionResult TestAjax()
         {
-            var item = Employees.FirstOrDefault();
-            return PartialView(item);
+            return View();
+        }
+        public IActionResult TestPartial()
+        {
+            return PartialView("DisplayInCards",Employees);
         }
 
         public IActionResult CityLetters(string City)
