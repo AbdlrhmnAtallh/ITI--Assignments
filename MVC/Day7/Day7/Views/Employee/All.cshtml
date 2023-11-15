@@ -41,3 +41,10 @@
 </script>
 
 <partial name="_DisplayInCards" />
+
+<script>
+    $.ajax({
+        url: "Employee/TestAjax", success: function (result) {
+            $("#div1").html(result);
+        }
+</script>

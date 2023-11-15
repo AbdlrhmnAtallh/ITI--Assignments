@@ -46,7 +46,11 @@ namespace Day7.Controllers
             }
         }
 
-
+        public IActionResult TestAjax()
+        {
+            var item = Employees.FirstOrDefault();
+            return PartialView(item);
+        }
 
         public IActionResult CityLetters(string City)
         {
