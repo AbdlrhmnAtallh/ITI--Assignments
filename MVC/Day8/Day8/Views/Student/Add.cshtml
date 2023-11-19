@@ -1,0 +1,17 @@
+﻿@model Student
+<form asp-controller="Student" asp-action="Save">
+
+    <label asp-for="Id"></label>
+    <input asp-for="Id" />
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+
+    <label asp-for="Age"></label>
+    <input asp-for="Age" />
+
+    <label asp-for="DepartmentId"></label>
+    <input asp-for="DepartmentId" />
+    
+    <input type="submit" />
+</form>

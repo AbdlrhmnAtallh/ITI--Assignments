@@ -5,7 +5,7 @@ namespace Day8.Models
     public class Student
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
         public int Age { get; set; }
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
