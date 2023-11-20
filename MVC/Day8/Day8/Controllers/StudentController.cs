@@ -26,5 +26,12 @@ namespace Day8.Controllers
             StudentRepository studentRepository = new StudentRepository();
             return View(studentRepository.All());
         }
+
+        public IActionResult SaveD (Department d)
+        {
+            StudentRepository ss = new StudentRepository();
+            ss.SaveD(d);
+            return View("All", ss.All());
+        }
     }
 }

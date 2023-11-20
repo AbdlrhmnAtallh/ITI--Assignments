@@ -3,6 +3,8 @@ namespace Day8.Models
 {
     public class Day8dbContext:DbContext
     {
+        public DbSet<Student> Students { get; set; }       
+        public DbSet<Department> Departments { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //base.OnConfiguring(optionsBuilder);
