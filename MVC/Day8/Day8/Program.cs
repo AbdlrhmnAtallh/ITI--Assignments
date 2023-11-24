@@ -1,3 +1,4 @@
+using Day8.Services;
 namespace Day8
 {
     public class Program
@@ -8,7 +9,7 @@ namespace Day8
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddSingleton<IStudentRepository, StudentRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

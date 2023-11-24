@@ -6,6 +6,11 @@ namespace Day8.Controllers
 {
     public class StudentController : Controller
     {
+        IStudentRepository istudentRepository;// = new StudentRepository();
+        public StudentController(IStudentRepository _istudentRepository)
+        {
+            istudentRepository = _istudentRepository;
+        }
         public IActionResult Index()
         {
             return View();
@@ -17,21 +22,18 @@ namespace Day8.Controllers
         }
         public IActionResult Save(Student student)
         {
-            StudentRepository studentRepository = new StudentRepository();
-            studentRepository.Add(student);
-            return View("All",studentRepository.All());
+            istudentRepository.Add(student);
+            return View("All",istudentRepository.All());
         }
         public IActionResult All()
         {
-            StudentRepository studentRepository = new StudentRepository();
-            return View(studentRepository.All());
+            return View(istudentRepository.All());
         }
 
         public IActionResult SaveD (Department d)
         {
-            StudentRepository ss = new StudentRepository();
-            ss.SaveD(d);
-            return View("All", ss.All());
+            istudentRepository.SaveD(d);
+            return View("All", istudentRepository.All());
         }
     }
 }
