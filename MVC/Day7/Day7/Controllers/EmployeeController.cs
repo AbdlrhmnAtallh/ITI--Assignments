@@ -8,9 +8,7 @@ namespace Day7.Controllers
     {
         public static List<Employee> Employees = new List<Employee>();
 
-        public static int[] Ids = new int[10];
-        public static string[] Names = new string[10];
-        int List = 0;
+      
 
 
         public IActionResult NameExists(string Name , int id )
