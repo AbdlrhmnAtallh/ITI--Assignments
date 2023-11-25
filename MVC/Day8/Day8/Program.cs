@@ -1,4 +1,7 @@
+using Day8.Models;
 using Day8.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Day8
 {
     public class Program
@@ -9,7 +12,12 @@ namespace Day8
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddDbContext<Day8dbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-4EKG6BP\SQL2022;
+                    Initial Catalog=Day8;
+                    Integrated Security=SSPI;
+                    TrustServerCertificate=True;"));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

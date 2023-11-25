@@ -5,7 +5,11 @@ namespace Day8.Services
     {
         public static List<Student> Students = new List<Student>();
 
-        Day8dbContext Context = new Day8dbContext();
+        Day8dbContext Context;// = new Day8dbContext();
+        public StudentRepository (Day8dbContext _context)
+        {
+            Context = _context;
+        }
         public void Add(Student student)
         {
             Context.Students.Add(student);
