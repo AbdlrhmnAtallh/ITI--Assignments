@@ -7,5 +7,6 @@ namespace Day8.Services
         void Add(Student student);
         List<Student> All();
         void SaveD(Department d);
+        public int Remove(int id);
     }
 }

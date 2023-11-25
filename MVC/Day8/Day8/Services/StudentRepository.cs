@@ -25,6 +25,17 @@ namespace Day8.Services
         {
             Context.Departments.Add(d);
         }
+        public int Remove (int id)
+        {
+            var student = Context.Students.FirstOrDefault(e => e.Id == id);
+            if (student != null)
+            { 
+                Context.Students.Remove(student);
+                Context.SaveChanges();
+                return 1;
+            }
+            return 0;
+        }
     }
 
 }

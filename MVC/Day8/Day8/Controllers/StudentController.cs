@@ -35,5 +35,14 @@ namespace Day8.Controllers
             istudentRepository.SaveD(d);
             return View("All", istudentRepository.All());
         }
+        public IActionResult Delete (int id)
+        {
+            istudentRepository.Remove(id);
+            if (istudentRepository.Remove(id) == 0)
+            {
+                return RedirectToAction("All");
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
