@@ -1,6 +1,7 @@
 ﻿namespace Day9.Services
 {
-    public class EmployeeRepository
+    public class EmployeeRepository:IEmployeeRepository
     {
+
     }
 }

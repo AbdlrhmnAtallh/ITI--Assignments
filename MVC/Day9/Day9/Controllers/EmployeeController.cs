@@ -4,9 +4,10 @@ namespace Day9.Controllers
 {
     public class EmployeeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Add()
         {
             return View();
         }
+        
     }
 }
