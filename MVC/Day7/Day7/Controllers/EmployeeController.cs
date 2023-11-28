@@ -7,10 +7,6 @@ namespace Day7.Controllers
     public class EmployeeController : Controller
     {
         public static List<Employee> Employees = new List<Employee>();
-
-      
-
-
         public IActionResult NameExists(string Name , int id )
         {
             Employee e = Employees.FirstOrDefault(i => i.Id == id);
