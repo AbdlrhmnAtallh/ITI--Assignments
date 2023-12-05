@@ -1,0 +1,15 @@
+﻿@model Employee
+
+<form asp-controller="Employee" asp-action="Add">
+    <label asp-for="Id"></label>
+    <input asp-for="Id" />
+
+    <label asp-for="Name" ></label>
+    <input asp-for="Name" />
+
+    <label asp-for="DepartmentId">Department Id</label>
+    <input asp-for="DepartmentId" />
+
+    <input type="submit" class="btn btn-succes" />
+
+</form>

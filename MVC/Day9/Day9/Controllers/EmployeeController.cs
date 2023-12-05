@@ -6,8 +6,8 @@ namespace Day9.Controllers
 {
     public class EmployeeController : Controller
     {
-        EmployeeRepository employeeRepository;
-        public EmployeeController (EmployeeRepository _employeeRepository)
+        IEmployeeRepository employeeRepository;
+        public EmployeeController (IEmployeeRepository _employeeRepository)
         {
             employeeRepository = _employeeRepository;
         }

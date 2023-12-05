@@ -1,3 +1,7 @@
+using Day9.Models;
+using Day9.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Day9
 {
     public class Program
@@ -8,7 +12,12 @@ namespace Day9
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
+            builder.Services.AddDbContext<Day9DbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-4EKG6BP\SQL2022;
+                    Initial Catalog=Day9;
+                    Integrated Security=SSPI;
+                    TrustServerCertificate=True;"));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
