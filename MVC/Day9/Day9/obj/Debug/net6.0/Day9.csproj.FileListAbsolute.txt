@@ -246,3 +246,11 @@ F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\obj\Debug\net6.0\refint\Day9.dll
 F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\obj\Debug\net6.0\Day9.pdb
 F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\obj\Debug\net6.0\Day9.genruntimeconfig.cache
 F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\obj\Debug\net6.0\ref\Day9.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+F:\Work_Space\ASP.Net_Core\ITI\MVC\Day9\Day9\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
