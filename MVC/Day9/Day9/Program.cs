@@ -1,5 +1,6 @@
 using Day9.Models;
 using Day9.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Day9
@@ -14,6 +15,7 @@ namespace Day9
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Day9DbContext>();
             builder.Services.AddDbContext<Day9DbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-4EKG6BP\SQL2022;
                     Initial Catalog=Day9;
                     Integrated Security=SSPI;
@@ -33,6 +35,7 @@ namespace Day9
 
             app.UseRouting();
 
+            app.UseAuthentication();// Check Cookie
             app.UseAuthorization();
 
             app.MapControllerRoute(

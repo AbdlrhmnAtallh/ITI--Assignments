@@ -1,5 +1,6 @@
 ﻿using Day9.Models;
 using Day9.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Day9.Controllers
@@ -26,6 +27,12 @@ namespace Day9.Controllers
         public IActionResult All()
         {
             return View(employeeRepository.All());
+        }
+
+        [Authorize]
+        public IActionResult Auth()
+        {
+            return View();
         }
         
     }
