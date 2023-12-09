@@ -33,9 +33,9 @@ namespace Day9.Controllers
                 // Create User 
                 IdentityResult result = await userManager.CreateAsync(user, Account.Password);
                
-                // Create Cookie
                 if (result.Succeeded)
                 {
+                    // Create Cookie
                     await signInManager.SignInAsync(user, false);
                     return RedirectToAction("All", "Employee");
                 }
@@ -45,6 +45,45 @@ namespace Day9.Controllers
                 }
             }
             return View(Account);
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel LoginUser)
+        {
+            if (ModelState.IsValid)
+            {
+                IdentityUser user = await userManager.FindByNameAsync(LoginUser.Username);
+                if (user!=null)
+                {
+                    Microsoft.AspNetCore.Identity.SignInResult result
+                        = await signInManager.PasswordSignInAsync(user, LoginUser.Password, LoginUser.Ispersisite, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Auth", "Employee");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Incorrect Username or Password");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Incorrect Username or Password");
+                }
+            }
+                return View(LoginUser);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
