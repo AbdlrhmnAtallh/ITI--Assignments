@@ -19,6 +19,7 @@ namespace Day9.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+           
             return View();
         }
         [HttpPost]
@@ -38,6 +39,7 @@ namespace Day9.Controllers
                     // Create Cookie
                     await signInManager.SignInAsync(user, false);
                     return RedirectToAction("All", "Employee");
+                   
                 }
                 foreach (var error in result.Errors)
                 {
@@ -48,13 +50,14 @@ namespace Day9.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login([FromQuery]string ReturnUrl = "~/Employee/All")
         {
+            ViewBag.Url = ReturnUrl;
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel LoginUser)
+        public async Task<IActionResult> Login(LoginViewModel LoginUser )
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +68,8 @@ namespace Day9.Controllers
                         = await signInManager.PasswordSignInAsync(user, LoginUser.Password, LoginUser.Ispersisite, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Auth", "Employee");
+                        // return RedirectToAction("Auth", "Employee");
+                        return Redirect(ViewBag.Url);
                     }
                     else
                     {
