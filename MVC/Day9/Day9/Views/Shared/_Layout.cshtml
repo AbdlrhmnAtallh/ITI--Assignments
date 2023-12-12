@@ -1,6 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    @if (User.IsInRole("Admin"))
+    {
+        <style>
+           span{
+               color:red
+           }
+        </style>
+    }
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Day9</title>
@@ -9,8 +18,12 @@
     <link rel="stylesheet" href="~/Day9.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    
+    
+        
+    <header class="AK">
+        
+        <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Day9</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -26,10 +39,30 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav">
+                        @if(User.Identity.IsAuthenticated==false)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Registration" asp-action="Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Registration" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+
+                            <span>Welcom @User.Identity.Name  .</span>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Registration" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

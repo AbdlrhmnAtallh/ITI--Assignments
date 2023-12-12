@@ -3,7 +3,7 @@
 <hr />
 <form asp-controller="Registration" asp-action="Login">
 <div asp-validation-summary="All" class="text-danger"></div>
-<input type="hidden" name="ReturnUrl" value="ViewBag.Url" />
+    @*<input type="hidden" name="ReturnUrl" value="ViewBag.Url" />*@
 
 <div class="form-group">
     <label asp-for="Username" class="controlcol-form-label"></label>
@@ -21,5 +21,11 @@
     <label asp-for="Ispersisite" class="controlcol-form-label"></label>
     <input asp-for="Ispersisite" />
 </div>
-<input type="submit" class="btn btn-dark"  />
+<input name="Login"  type="submit" class="btn btn-secondary"  />
+<a asp-action="Register" class="btn btn-dark">Register</a>
 </form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

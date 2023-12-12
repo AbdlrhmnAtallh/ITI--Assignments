@@ -1,8 +1,23 @@
 ﻿@model RegisterAccountViewModel
 
-<h1>Register</h1>
-<h3>Register Account To be Auth</h3>
-<form asp-controller="Registration" asp-action="Register">
+@{
+    var actionName = ViewContext.ActionDescriptor.RouteValues["action"];
+}
+@{
+    
+    if (actionName == "Register")
+    {
+        <h1>Register</h1>
+        <h3>Register Account To be Auth</h3>
+    }
+    else
+    {
+        <h1>Admin</h1>
+        <h3>Register as an Admin</h3>
+    }
+}
+<hr />
+<form method="post">
 
     <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -30,5 +45,10 @@
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
 
-    <input type="submit" class="active" />
+    <input type="submit" value="Register" class="active" />
 </form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

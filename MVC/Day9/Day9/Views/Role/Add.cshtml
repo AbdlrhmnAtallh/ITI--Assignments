@@ -1,0 +1,13 @@
+﻿@model RoleViewModel
+<h1>Add Role</h1>
+<h4>Admins Only Can Add Roles</h4>
+<hr />
+<form method="post">
+    <label asp-for="Name" class="control-label">Role Name</label>
+    <input asp-for="Name" class="form-control"/>
+    <br />
+    <input type="submit" value="Add" class="btn btn-dark"/>
+    <a asp-controller="Home" asp-action="index" class="btn btn-warning">Home</a>
+</form>
+
+<hr />

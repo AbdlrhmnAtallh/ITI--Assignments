@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Day9.ViewModel;
 using Microsoft.AspNetCore.Identity;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Day9.Controllers
 {
@@ -9,11 +10,13 @@ namespace Day9.Controllers
         //RegisterAccountViewModel Account;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
-        public RegistrationController(UserManager<IdentityUser> _userManager,SignInManager<IdentityUser> _signInManager)
+        private readonly RoleManager<IdentityRole> roleManager;
+        public RegistrationController(UserManager<IdentityUser> _userManager,SignInManager<IdentityUser> _signInManager,RoleManager<IdentityRole> _roleManager)
         {
             //Account = _Account;
             userManager = _userManager;
             signInManager = _signInManager;
+            roleManager = _roleManager;
         }
 
         [HttpGet]
@@ -50,9 +53,9 @@ namespace Day9.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login([FromQuery]string ReturnUrl = "~/Employee/All")
-        {
-            ViewBag.Url = ReturnUrl;
+        public IActionResult Login() 
+        { 
+            //ViewBag.Url = ReturnUrl;
             return View();
         }
 
@@ -68,8 +71,8 @@ namespace Day9.Controllers
                         = await signInManager.PasswordSignInAsync(user, LoginUser.Password, LoginUser.Ispersisite, false);
                     if (result.Succeeded)
                     {
-                        // return RedirectToAction("Auth", "Employee");
-                        return Redirect(ViewBag.Url);
+                        return RedirectToAction("Auth", "Employee");
+                        //return Redirect(ViewBag.Url);
                     }
                     else
                     {
@@ -89,5 +92,44 @@ namespace Day9.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult AddAdmin()
+        {
+            return View("Register");
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddAdmin(RegisterAccountViewModel Account)
+        {
+            if (ModelState.IsValid)
+            {
+                IdentityUser user = new IdentityUser()
+                {
+                    UserName = Account.UserName,
+                    Email = Account.Email,
+                };
+                IdentityResult result = await userManager.CreateAsync(user, Account.Password);
+
+                var role = roleManager.Roles.FirstOrDefault(e => e.Name == "Admin");
+                if (result.Succeeded && role!=null)
+                {
+                    await userManager.AddToRoleAsync(user, "Admin");
+                    await signInManager.SignInAsync(user, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach(var error in result.Errors)
+                    {
+                        ModelState.AddModelError("",error.Description);
+                    }
+                }
+            }
+                return View("Register",Account);
+        }
+
+
+
+
+
     }
 }

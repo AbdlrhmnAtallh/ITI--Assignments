@@ -1,0 +1,19 @@
+﻿@*Error here The roleManager.Roles dosn't retrieve a collection of RolesViewModel*@
+@*@model List<RoleViewModel>*@
+
+<h1>All Roles</h1>
+<hr />
+
+<table>
+    <thead>
+        <ht>Name</ht>
+    </thead>
+    <tbody>
+        @foreach(var item in ViewBag.Roles)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
