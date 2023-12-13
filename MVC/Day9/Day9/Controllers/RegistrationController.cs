@@ -2,6 +2,7 @@
 using Day9.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Day9.Controllers
 {
@@ -92,7 +93,7 @@ namespace Day9.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
+        [Authorize(Roles ="Admin")]
         public IActionResult AddAdmin()
         {
             return View("Register");
