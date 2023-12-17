@@ -61,8 +61,10 @@ namespace Day9.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel LoginUser )
+        [Route("Registration/Login", Name = "RegistrationLogin")]
+        public async Task<IActionResult> Login(LoginViewModel LoginUser , string returnUrl )
         {
+            ModelState.Remove(returnUrl);
             if (ModelState.IsValid)
             {
                 IdentityUser user = await userManager.FindByNameAsync(LoginUser.Username);
@@ -72,6 +74,10 @@ namespace Day9.Controllers
                         = await signInManager.PasswordSignInAsync(user, LoginUser.Password, LoginUser.Ispersisite, false);
                     if (result.Succeeded)
                     {
+                        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl)) // Url.IsLocalIrl checks if the returnUrl is a local URL within the same application
+                        {
+                            return Redirect(returnUrl);
+                        }
                         return RedirectToAction("Auth", "Employee");
                         //return Redirect(ViewBag.Url);
                     }

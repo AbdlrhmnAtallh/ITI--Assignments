@@ -4,7 +4,7 @@
 <form asp-controller="Registration" asp-action="Login">
 <div asp-validation-summary="All" class="text-danger"></div>
     @*<input type="hidden" name="ReturnUrl" value="ViewBag.Url" />*@
-
+    <input type="hidden" name="returnUrl" value="@Context.Request.Query["returnUrl"]" />
 <div class="form-group">
     <label asp-for="Username" class="controlcol-form-label"></label>
     <input asp-for="Username" class="form-control" />

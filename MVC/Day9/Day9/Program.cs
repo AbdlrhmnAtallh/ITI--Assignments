@@ -1,5 +1,6 @@
 using Day9.Models;
 using Day9.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,14 +36,22 @@ namespace Day9
 
             app.UseRouting();
 
-            app.UseAuthentication();// Check Cookie
+            //app.UseAuthentication();// Check Cookie
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                     options.LoginPath = "/Account/Login"; // No Cookies 
+                     options.AccessDeniedPath = "/Account/AccessDenied"; // authenticated but not authorized
+                });
+
+
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.UseStatusCodePagesWithRedirects("~/Registration/Login");
+           // app.UseStatusCodePagesWithRedirects("~/Registration/Login");
 
             app.Run();
         }
