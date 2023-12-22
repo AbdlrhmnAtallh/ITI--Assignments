@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HR System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/CustomLayout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FinalProject_HRsystem.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <h1>HR System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Employees</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to the HR System</h2>
+                <p>Manage your employees and departments with ease.</p>
+                <a href="#" class="btn">Get Started</a>
+                @RenderBody()
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 HR System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
