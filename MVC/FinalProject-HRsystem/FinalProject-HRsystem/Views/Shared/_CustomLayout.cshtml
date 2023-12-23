@@ -4,36 +4,110 @@
     <title>HR System</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/CustomLayout.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/FinalProject_HRsystem.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FinalProject_HRsystem.CustomLayout.css" asp-append-version="true" />
 
 </head>
 <body>
-    <header class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <h1>HR System</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Employees</a></li>
-                <li><a href="#">Departments</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <div id="header-wrap">
+        <div class="header-top-menu bg-black color-secondary py-2">
+            <div class="container-fluid">
+                <div class="row row-cols-md-2">
+                    <div class="contact-block">
+                        <span class="pr-50"><i class="icon icon-phone pe-2"></i>0123-2222-4444</span>
+                        <span class="color-secondary">
+                            <i class="icon icon-envelope-o pe-2"></i><a href="#" class="text-decoration-none">contact@yourcompany.com</a>
+                        </span>
+                    </div>
+
+                    <div class="header-top-right text-md-end">
+                        <ul class="list-unstyled d-flex justify-content-end color-secondary">
+                            <li class="pr-50"><a href="#" class="text-decoration-none">My Account</a></li>
+                            <li class="pr-50"><a href="#" class="text-decoration-none">FAQs</a></li>
+                            <li><a href="#" class="text-decoration-none">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!----top-menu---->
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <nav class="navbar navbar-expand-lg col-md-12">
+
+                        <div class="navbar-brand">
+                            <a href="index.html">
+                                <img src="images/main-logo.png" alt="logo">
+                            </a>
+                        </div>
+
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#slide-navbar-collapse" aria-controls="slide-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="icon icon-navicon"></i></span>
+                        </button>
+
+                        <div class="navbar-collapse collapse" id="slide-navbar-collapse">
+                            <ul class="navbar-nav list-inline text-uppercase">
+                                <li class="nav-item text-hover active"><a href="index.html" class="nav-link" data-effect="Home">Home</a></li>
+                                <li class="nav-item text-hover"><a href="about.html" class="nav-link" data-effect="About Us">About us</a></li>
+                                <li class="nav-item text-hover"><a href="blog.html" class="nav-link" data-effect="Blogs">Blog</a></li>
+                                <li class="nav-item text-hover"><a href="contact.html" class="nav-link" data-effect="Contact">Contact us</a></li>
+
+                                <li class="nav-item dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle">Pages</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="about.html" class="dropdown-item">About us <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="blog.html" class="dropdown-item">Blog <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="single-post.html" class="dropdown-item">Single Post <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="contact.html" class="dropdown-item">Contact us <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="shop.html" class="dropdown-item">Shop <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="single-product.html" class="dropdown-item">Single Product <span class="badge bg-primary">PRO</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="https://templatesjungle.gumroad.com/l/bakery-free-cake-shop-html-website-template" target="_blank" class="btn btn-dark rounded-pill m-0">Get PRO</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="action-menu">
+                            <div class="searchbar">
+                                <a href="#" class="search-button search-toggle" data-selector=".navbar">
+                                    <i class="icon icon-search"></i>
+                                </a>
+                                <form role="search" method="get" class="search-box" action="">
+                                    <input class="search-field text search-input" placeholder="Search" type="search">
+                                </form>
+                            </div>
+                            <div class="shopping-cart">
+                                <a href="#">
+                                    <i class="icon icon-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div><!--action-menu-->
+
+                    </nav>
+
+                </div>
+            </div>
+
+        </header>
+
+    </div>
+
+
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h2>Welcome to the HR System</h2>
-                <p>Manage your employees and departments with ease.</p>
-                <a href="#" class="btn">Get Started</a>
                 @RenderBody()
-            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 HR System. All rights reserved.</p>
-    </footer>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
