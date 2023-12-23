@@ -17,7 +17,8 @@ body {
     --heading-font-weight: 700;
     --heading-color: #111;
     --heading-line-height: 1.24;
-    --swiper-theme-color: #ce3c83;
+    //--swiper-theme-color: #ce3c83;
+    
     /* bootstrap */
     --bs-body-font-family: "Merriweather", Georgia, Serif;
     --bs-body-font-size: 17px;
@@ -248,7 +249,7 @@ a {
         color: #d3a153;
     }
 
-    /*
+    
 
 /* dark theme */
 [data-bs-theme=dark] body {

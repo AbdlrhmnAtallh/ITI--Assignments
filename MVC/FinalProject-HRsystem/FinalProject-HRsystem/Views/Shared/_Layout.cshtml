@@ -9,6 +9,38 @@
     <link rel="stylesheet" href="~/FinalProject_HRsystem.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+
+    <div id="header-wrap">
+        <div class="header-top-menu bg-black color-secondary py-2">
+            <div class="container-fluid">
+                <div class="row row-cols-md-2">
+                    <div class="contact-block">
+                        <span class="color-secondary">
+                            <a href="#" class="text-decration-nonw">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-alexa" viewBox="0 0 16 16">
+                                <path d="M7.996 0A7.998 7.998 0 0 0 0 8a8 8 0 0 0 6.93 7.93v-1.613a1.06 1.06 0 0 0-.717-1.008A5.602 5.602 0 0 1 2.4 7.865 5.579 5.579 0 0 1 8.054 2.4a5.599 5.599 0 0 1 5.535 5.81l-.002.046a6.116 6.116 0 0 1-.012.192l-.005.061a4.85 4.85 0 0 1-.033.284l-.01.068c-.685 4.516-6.564 7.054-6.596 7.068A7.998 7.998 0 0 0 15.992 8 7.998 7.998 0 0 0 7.996.001Z" />
+                            </svg>
+                            </a>
+                        </span>
+                        <span class="pr-50"><i class="icon icon-phone pe-2"></i>0123-2222-4444</span>
+                        <span class="color-secondary">
+                            <i class="icon icon-envelope-o pe-2"></i><a href="#" class="text-decoration-none">contact@yourcompany.com</a>
+                        </span>
+                    </div>
+
+                    <div class="header-top-right text-md-end">
+                        <ul class="list-unstyled d-flex justify-content-end color-secondary">
+                            <li class="pr-50"><a href="#" class="text-decoration-none">My Account</a></li>
+                            <li class="pr-50"><a href="#" class="text-decoration-none">FAQs</a></li>
+                            <li><a href="#" class="text-decoration-none">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!----top-menu---->
+
+   @*
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -29,7 +61,87 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header>*@
+
+
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <nav class="navbar navbar-expand-lg col-md-12">
+
+                       @* <div class="navbar-brand">
+                            <a href="index.html">
+                                
+                                <img src="D:\PersonalGallery\IMG-20230505-WA0004.jpg">
+                            </a>
+                        </div>*@
+
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#slide-navbar-collapse" aria-controls="slide-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="navbar-collapse collapse" id="slide-navbar-collapse">
+                            <ul class="navbar-nav list-inline text-uppercase">
+                                <li class="nav-item text-hover active"><a href="index.html" class="nav-link" data-effect="Home">Home</a></li>
+                                <li class="nav-item text-hover"><a href="about.html" class="nav-link" data-effect="About Us">About us</a></li>
+                                <li class="nav-item text-hover"><a href="blog.html" class="nav-link" data-effect="Blogs">Blog</a></li>
+                                <li class="nav-item text-hover"><a href="contact.html" class="nav-link" data-effect="Contact">Contact us</a></li>
+
+                                <li class="nav-item dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle">Pages</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="about.html" class="dropdown-item">About us <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="blog.html" class="dropdown-item">Blog <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="single-post.html" class="dropdown-item">Single Post <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="contact.html" class="dropdown-item">Contact us <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="shop.html" class="dropdown-item">Shop <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a href="single-product.html" class="dropdown-item">Single Product <span class="badge bg-primary">PRO</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="https://templatesjungle.gumroad.com/l/bakery-free-cake-shop-html-website-template" target="_blank" class="btn btn-dark rounded-pill m-0">Get PRO</a></li>
+
+                            </ul>
+                        </div>
+
+
+                       @* <div class="action-menu">
+                            <div class="searchbar">
+                                <a href="#" class="search-button search-toggle" data-selector=".navbar">
+                                    <i class="icon icon-search"></i>
+                                </a>
+                                <form role="search" method="get" class="search-box" action="">
+                                    <input class="search-field text search-input" placeholder="Search" type="search">
+                                </form>
+                            </div>
+                            <div class="shopping-cart">
+                                <a href="#">
+                                    <i class="icon icon-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div><!--action-menu-->
+                        *@
+                    </nav>
+
+                </div>
+            </div>
+
+        </header>
+
+    
+
+
+
+
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -41,6 +153,7 @@
             &copy; 2023 - FinalProject_HRsystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
