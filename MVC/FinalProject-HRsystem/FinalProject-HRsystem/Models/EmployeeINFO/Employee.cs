@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FinalProject_HRsystem.Models.Employee
+namespace FinalProject_HRsystem.Models.EmployeeINFO
 {
     public partial class Employee
     {

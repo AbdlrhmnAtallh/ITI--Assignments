@@ -1,0 +1,92 @@
+﻿@model Employee
+@ViewData["Title"]="ss"
+@{
+    if (Model != null)
+    {
+        ViewData["Title"] = "Update";
+    }
+    else
+    {
+        ViewData["Title"] = "Add";
+    }
+}
+<title>@ViewData["Title"]</title>
+
+<form asp-action="@ViewData["Title"]">
+
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" readonly />
+        <span asp-validation-for="Id"></span>
+    </div>
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+    </div>
+
+    <div>
+        <label asp-for="Birthdate"></label>
+        <input asp-for="Birthdate" />
+    </div>
+
+    <div>
+        <label asp-for="Gender"></label>
+        <input asp-for="Gender" />
+    </div>
+
+    <div>
+        <label asp-for="Country"></label>
+        <input asp-for="Country" />
+        <span asp-validation-for="Country"></span>
+    </div>
+
+    <div>
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+        <span asp-validation-for="City"></span>
+    </div>
+
+    <div>
+        <label asp-for="GrossSalary"></label>
+        <input asp-for="GrossSalary" />
+        <span asp-validation-for="GrossSalary"></span>
+    </div>
+
+    <div>
+        <label asp-for="NetSalary"></label>
+        <input asp-for="NetSalary" />
+        <span asp-validation-for="NetSalary"></span>
+    </div>
+
+    <div>
+        <label asp-for="TaskId"></label>
+        <input asp-for="TaskId" />
+        <span asp-validation-for="TaskId"></span>
+    </div>
+
+    <div>
+        <label asp-for="YearsOfExperince"></label>
+        <input asp-for="YearsOfExperince" />
+        <span asp-vaildation-for="YearsOfExperince"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Image">Image (not Required)</label>
+        <input asp-for="Image" />
+        <span asp-validation-for="Image"></span>
+    </div>
+
+    
+    <button type="submit">@ViewData["Title"]</button>
+    <button asp-action="All">Back To List</button>
+
+</form>
