@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\Work_Space\ASP.Net_Core\ITI\MVC\FinalProject-HRsystem\FinalProject-HRsystem
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/FinalProject-HRsystem/FinalProject-HRsystem/Views/Employee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Work_Space/ASP.Net_Core/ITI/MVC/FinalProject-HRsystem/FinalProject-HRsystem/Views/Employee/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Work_Space/ASP.Net_Core/ITI/MVC/FinalProject-HRsystem/FinalProject-HRsystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

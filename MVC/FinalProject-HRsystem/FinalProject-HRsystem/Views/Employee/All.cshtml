@@ -1,0 +1,52 @@
+﻿@model List<Employee>
+
+<title>All Employees</title>
+<h1>All Employees</h1>
+<p>--</p>
+<h4>Select How Do You Want To Display Employees Data</h4>
+@{
+    Employee e = new Employee();
+    //SelectList items = new SelectList();
+}
+<table>
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Job Title</th>
+          <th>Department</th>
+          <th>Tasks</th>
+          <th>Age</th>
+          <th>Years OF Experince</th>
+          <th>Country, City</th>
+          <th>Gender</th>
+          <th>Gross Salary</th>
+          <th>Net Salary</th>
+          <th></th>
+          <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Title</td>
+                <td>@item.DepartmentId</td>
+                <td>@item.TaskId</td>
+                <td>@item.Birthdate</td>
+                <td>@item.YearsOfExperince</td>
+                <td>@item.Country, @item.City</td>
+                <td>@item.Gender</td>
+                <td>@item.GrossSalary</td>
+                <td>@item.NetSalary</td>
+                <td><a asp-action="Update" asp-asp-route="@item.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-asp-route="@item.Id">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+    
+</table>

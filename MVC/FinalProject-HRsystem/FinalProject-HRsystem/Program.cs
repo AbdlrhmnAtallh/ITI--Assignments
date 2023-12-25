@@ -1,3 +1,5 @@
+using FinalProject_HRsystem.Services;
+
 namespace FinalProject_HRsystem
 {
     public class Program
@@ -8,6 +10,7 @@ namespace FinalProject_HRsystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IEmployeeLayer, EmployeeLayer>();
 
             var app = builder.Build();
 
