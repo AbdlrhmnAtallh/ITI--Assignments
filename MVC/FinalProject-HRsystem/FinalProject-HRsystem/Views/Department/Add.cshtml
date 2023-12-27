@@ -1,0 +1,38 @@
+﻿@model Department
+@{
+    if (Model == null)
+    {
+        ViewData["Title"] = "Add";
+    }
+    else ViewData["Title"] = "Update";
+}
+<title>@ViewData["Title"]</title>
+<h1>@ViewData["Title"] Department</h1>
+<p>--</p>
+<h4>Here You Can @ViewData["Title"] Department</h4>
+<hr />
+
+<form asp-action="@ViewData["Title"]">
+    <div asp-validation-summary="All"></div>
+    
+    <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id" readonly />
+        <span asp-validation-for="Id"></span>
+    </div>
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="DepartmentHeadId"></label>
+        <input asp-for="DepartmentHeadId" />
+        <span asp-validation-for="DepartmentHeadId"></span>
+    </div>
+    @*I want to make select List To select Employees that work at department*@
+    <button type="submit" name="Add"></button>
+    <button asp-action="Index" asp-controller="Home" name="Home"></button>
+</form>

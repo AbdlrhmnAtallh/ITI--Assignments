@@ -1,0 +1,27 @@
+﻿@model List<Department>
+
+<h4>All Departments</h4>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Department Leader</th>
+            <th>Employees</th>
+            <th></th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.DepartmentHeadId</td>
+                <td></td>
+                <td><a asp-action="Update">Edit</a></td>
+                <td><a asp-action="Remove">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

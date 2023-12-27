@@ -16,13 +16,9 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
-
-        
-
         [Obsolete("Use the DepartmentHeadId property instead.")]
         public Employee DepartmentHead { get; set; }
         [Display(Name ="Department Leader")]
