@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-
+using FinalProject_HRsystem.Models.DepartmentINFO;
+using FinalProject_HRsystem.Models.TaskINFO;
 namespace FinalProject_HRsystem.Models.EmployeeINFO
 {
     public partial class Employee
@@ -17,9 +18,9 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-        [ForeignKey("Tasks")]
+        [ForeignKey("Task")]
         public int TaskId { get; set; }
-        public Tasks Tasks { get; set; }
+        public Taskk Task { get; set; }
         public string Image { get; set; }
 
     }

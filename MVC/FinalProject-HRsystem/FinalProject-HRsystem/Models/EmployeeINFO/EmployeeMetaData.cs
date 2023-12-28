@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using FinalProject_HRsystem.Models.DepartmentINFO;
+using FinalProject_HRsystem.Models.TaskINFO;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -51,7 +53,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
         public int TaskId { get; set; }
-        public Tasks Tasks { get; set; }
+        public Taskk Tasks { get; set; }
         public string Image { get; set; }
     }
 }
