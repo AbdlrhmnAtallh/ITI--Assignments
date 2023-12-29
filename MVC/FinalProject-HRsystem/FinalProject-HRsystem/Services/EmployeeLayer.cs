@@ -3,7 +3,7 @@ namespace FinalProject_HRsystem.Services
 {
     public class EmployeeLayer : IEmployeeLayer
     {
-        private List<Employee> Employees = new List<Employee>();
+        public static List<Employee> Employees = new List<Employee>();
 
         public void Add(Employee employee)
         {

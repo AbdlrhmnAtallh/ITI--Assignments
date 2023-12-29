@@ -17,11 +17,11 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public decimal YearsOfExperince { get;set; }
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
         [ForeignKey("Task")]
         public int TaskId { get; set; }
-        public Taskk Task { get; set; }
-        public string Image { get; set; }
+        public Taskk? Tasks { get; set; }
+        public string? Image { get; set; }
 
     }
 }

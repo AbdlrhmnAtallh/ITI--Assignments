@@ -1,4 +1,115 @@
-﻿@model Employee
+﻿
+
+@*<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Responsive Contact Form</title>
+    <link rel='stylesheet' href='https://codepen.io/uzcho_/pen/RmOWmw.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <link rel="stylesheet" href="~/css/AddForm.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+
+
+<h1>Here You Can </h1>
+<p>--</p>
+<h4>@ViewData["Title"] Employees!</h4>
+
+<div class="container">
+
+    <form asp-action="@ViewData["Title"]">
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="field" tabindex="1">
+            <label asp-for="Id"></label>
+            <input asp-for="Id" />
+            <span asp-validation-for="Id"></span>
+        </div>
+
+        <div class="field" tabindex="1">
+            <i class="far fa-user"></i>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" placeholder="e.g. john doe" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" />
+        </div>
+
+        <div>
+            <label asp-for="Birthdate"></label>
+            <input asp-for="Birthdate" />
+        </div>
+
+        <div>
+            <label asp-for="Gender"></label>
+            <input asp-for="Gender" />
+        </div>
+
+        <div>
+            <label asp-for="Country"></label>
+            <input asp-for="Country" />
+            <span asp-validation-for="Country"></span>
+        </div>
+
+        <div>
+            <label asp-for="City"></label>
+            <input asp-for="City" />
+            <span asp-validation-for="City"></span>
+        </div>
+
+        <div>
+            <label asp-for="GrossSalary"></label>
+            <input asp-for="GrossSalary" />
+            <span asp-validation-for="GrossSalary"></span>
+        </div>
+
+        <div>
+            <label asp-for="NetSalary"></label>
+            <input asp-for="NetSalary" />
+            <span asp-validation-for="NetSalary"></span>
+        </div>
+
+        <div>
+            <label asp-for="TaskId"></label>
+            <input asp-for="TaskId" />
+            <span asp-validation-for="TaskId"></span>
+        </div>
+
+        <div>
+            <label asp-for="YearsOfExperince"></label>
+            <input asp-for="YearsOfExperince" />
+            <span asp-vaildation-for="YearsOfExperince"></span>
+        </div>
+
+        <div>
+            <label asp-for="Image">Image (not Required)</label>
+            <input asp-for="Image" />
+            <span asp-validation-for="Image"></span>
+        </div>
+
+        <div>
+            <label asp-for="DepartmentId">Department</label>
+            <input asp-for="DepartmentId" />
+            <span asp-validation-for="Image"></span>
+        </div>
+
+
+        <button type="submit">@ViewData["Title"]</button>
+        <button asp-action="All">Back To List</button>
+    </form>
+
+</div>
+*@
+
+
+
+
+@model Employee
 @{
     if (Model != null)
     {
@@ -11,85 +122,133 @@
 }
 <title>@ViewData["Title"]</title>
 
-<h1>Here You Can </h1>
-<p>--</p>
-<h4>@ViewData["Title"] Employees!</h4>
 
-<form asp-action="@ViewData["Title"]">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Responsive Contact Form</title>
+    <link rel='stylesheet' href='https://codepen.io/uzcho_/pen/RmOWmw.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <link rel="stylesheet" href="~/css/AddForm.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-    <div asp-validation-summary="All"></div>
+</head>
+<body>
 
-    <div>
-        <label asp-for="Id"></label>
-        <input asp-for="Id" readonly />
-        <span asp-validation-for="Id"></span>
-    </div>
-
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
-    </div>
-
-    <div>
-        <label asp-for="Title"></label>
-        <input asp-for="Title" />
-    </div>
-
-    <div>
-        <label asp-for="Birthdate"></label>
-        <input asp-for="Birthdate" />
-    </div>
-
-    <div>
-        <label asp-for="Gender"></label>
-        <input asp-for="Gender" />
-    </div>
-
-    <div>
-        <label asp-for="Country"></label>
-        <input asp-for="Country" />
-        <span asp-validation-for="Country"></span>
-    </div>
-
-    <div>
-        <label asp-for="City"></label>
-        <input asp-for="City" />
-        <span asp-validation-for="City"></span>
-    </div>
-
-    <div>
-        <label asp-for="GrossSalary"></label>
-        <input asp-for="GrossSalary" />
-        <span asp-validation-for="GrossSalary"></span>
-    </div>
-
-    <div>
-        <label asp-for="NetSalary"></label>
-        <input asp-for="NetSalary" />
-        <span asp-validation-for="NetSalary"></span>
-    </div>
-
-    <div>
-        <label asp-for="TaskId"></label>
-        <input asp-for="TaskId" />
-        <span asp-validation-for="TaskId"></span>
-    </div>
-
-    <div>
-        <label asp-for="YearsOfExperince"></label>
-        <input asp-for="YearsOfExperince" />
-        <span asp-vaildation-for="YearsOfExperince"></span>
-    </div>
-    
-    <div>
-        <label asp-for="Image">Image (not Required)</label>
-        <input asp-for="Image" />
-        <span asp-validation-for="Image"></span>
-    </div>
 
     
-    <button type="submit">@ViewData["Title"]</button>
-    <button asp-action="All">Back To List</button>
+    <h1>@ViewData["Title"] Employee!</h1>
 
-</form>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <form asp-action="@ViewData["Title"]">
+
+            <div asp-validation-summary="All"></div>
+
+            <div class="field" tabindex="1">
+                <label asp-for="Id">
+                </label>
+                <input asp-for="Id" />
+            </div>
+
+            <div class="field" tabindex="2">
+                <label asp-for="Name">
+                    <i class="far fa-user"></i>Employee Name
+                </label>
+                <input asp-for="Name" placeholder="e.g. Abdelrhman Mohamed" >
+            </div>
+
+            <div class="field" tabindex="3">
+                <label asp-for="Title">
+                    
+                </label>
+                <input asp-for="Title" placeholder="Full Stack .Net Developer" >
+            </div>
+
+            <div class="field" tabindex="4">
+                <label asp-for="Gender">
+                </label>
+                <input asp-for="Gender" placeholder="type here" ></>
+            </div>
+
+            <div class="field" tabindex="5">
+                <label asp-for="Birthdate">
+                    <i class="bi bi-calendar-date"></i> Date Of Birth
+                </label>
+                <input asp-for="Birthdate" />
+            </div>
+
+            <div class="field" tabindex="6">
+                <label asp-for="GrossSalary">
+                </label>
+                <input asp-for="GrossSalary" placeholder="type here" ></>
+            </div>
+
+            <div class="field" tabindex="7">
+                <label asp-for="NetSalary">
+                </label>
+                <input asp-for="NetSalary" placeholder="type here" ></>
+            </div>
+
+            <div class="field" tabindex="8">
+                <label asp-for="Country">
+                </label>
+                <input asp-for="Country" id="countryInput" placeholder="Your current country of residence"></>
+            </div>
+
+            <div class="field" tabindex="9">
+                <label asp-for="City">
+                </label>
+                <input asp-for="City" id="cityInput" placeholder="City In "></>
+            </div>
+
+            <div class="field" tabindex="10">
+                <label asp-for="DepartmentId">
+                </label>
+                <input asp-for="DepartmentId" placeholder="type here"></>
+            </div>
+
+            <div class="field" tabindex="11">
+                <label asp-for="YearsOfExperince">
+                </label>
+                <input asp-for="YearsOfExperince" placeholder="type here"></>
+            </div>
+
+            <div class="field" tabindex="12">
+                <label asp-for="TaskId">
+                </label>
+                <input asp-for="TaskId" placeholder="Got Any Tasks?"></>
+            </div>
+
+            <button type="submit">Add Employee</button>
+            <div class="Pages">
+            
+                <span>
+                    Back To <i class="fas fa-long-arrow-alt-right"></i>
+                </span>
+                <a class="fab fa-facebook-f" href="https://facebook.com/uzcho" target="blank_">Home</a>
+                <a class="fab fa-twitter" href="https://twitter.com/uzcho_" target="blank_"></a>
+                <a class="fab fa-instagram" href="https://www.instagram.com/uzcho_" target="blank_"></a>
+                <a class="fab fa-codepen" href="https://codepen.io/uzcho_" target="blank_"></a>
+            </div>
+        </form>
+    </div>
+
+  
+</body>
+</html>
+<script>
+    // Get the input elements
+    const countryInput = document.getElementById('countryInput');
+    const cityInput = document.getElementById('cityInput');
+
+    // Add an event listener to the country input
+    countryInput.addEventListener('input', updateCityPlaceholder);
+
+    // Function to update the city input placeholder
+    function updateCityPlaceholder() {
+        const country = countryInput.value;
+        cityInput.placeholder = `City in ${country}`;
+    }
+</script>

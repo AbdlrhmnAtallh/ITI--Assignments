@@ -22,7 +22,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
 
     public class EmployeeMetaData
     {
-        [Required]
+       
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
@@ -51,9 +51,9 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public decimal YearsOfExperince { get; set; }
         [Required]
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
         public int TaskId { get; set; }
-        public Taskk Tasks { get; set; }
-        public string Image { get; set; }
+        public Taskk? Tasks { get; set; }
+        public string? Image { get; set; }
     }
 }

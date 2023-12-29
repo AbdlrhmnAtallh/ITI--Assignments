@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FinalProject_HRsystem.styles.css" asp-append-version="true" />
+    
 </head>
 <body>
 
@@ -96,8 +97,8 @@
                                 <li class="nav-item dropdown">
                                     <a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle">Pages</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="about.html" class="dropdown-item">About us <span class="badge bg-primary">PRO</span></a></li>
-                                        <li><a href="blog.html" class="dropdown-item">Blog <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a asp-controller="Employee" asp-action="Add" class="dropdown-item">Add Employee <span class="badge bg-primary">PRO</span></a></li>
+                                        <li><a asp-controller="Employee" asp-action="All" class="dropdown-item">All Employees<span class="badge bg-primary">PRO</span></a></li>
                                         <li><a href="single-post.html" class="dropdown-item">Single Post <span class="badge bg-primary">PRO</span></a></li>
                                         <li><a href="contact.html" class="dropdown-item">Contact us <span class="badge bg-primary">PRO</span></a></li>
                                         <li><a href="shop.html" class="dropdown-item">Shop <span class="badge bg-primary">PRO</span></a></li>

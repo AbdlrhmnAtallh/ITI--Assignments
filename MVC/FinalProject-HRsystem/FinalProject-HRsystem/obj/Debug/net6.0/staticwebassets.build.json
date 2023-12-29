@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xte8vk/dLc4t0T7+yZty9RZ2k613OC5oMvCDF/mI/M0=",
+  "Hash": "cUVxkI14c5oeMcwYhPT5Ta5r0LPJN3OK5QgDhAcrc0I=",
   "Source": "FinalProject-HRsystem",
   "BasePath": "_content/FinalProject-HRsystem",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalProject-HRsystem.bundle.scp.css"
+    },
+    {
+      "Identity": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\wwwroot\\css\\AddForm.css",
+      "SourceId": "FinalProject-HRsystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\wwwroot\\",
+      "BasePath": "_content/FinalProject-HRsystem",
+      "RelativePath": "css/AddForm.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AddForm.css"
     },
     {
       "Identity": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\wwwroot\\css\\CustomLayout.css",
