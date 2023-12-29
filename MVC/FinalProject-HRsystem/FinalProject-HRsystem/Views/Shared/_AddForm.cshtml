@@ -144,12 +144,13 @@
     <div class="container">
         <form asp-action="@ViewData["Title"]">
 
-            <div asp-validation-summary="All"></div>
+            <div asp-validation-summary="All" style="color:red"></div>
 
             <div class="field" tabindex="1">
                 <label asp-for="Id">
                 </label>
                 <input asp-for="Id" />
+                <span asp-validation-for="Id" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="2">
@@ -157,6 +158,7 @@
                     <i class="far fa-user"></i>Employee Name
                 </label>
                 <input asp-for="Name" placeholder="e.g. Abdelrhman Mohamed" >
+                <span asp-validation-for="Name" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="3">
@@ -164,12 +166,14 @@
                     
                 </label>
                 <input asp-for="Title" placeholder="Full Stack .Net Developer" >
+                <span asp-validation-for="Title" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="4">
                 <label asp-for="Gender">
                 </label>
                 <input asp-for="Gender" placeholder="type here" ></>
+                <span asp-validation-for="Gender" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="5">
@@ -177,48 +181,56 @@
                     <i class="bi bi-calendar-date"></i> Date Of Birth
                 </label>
                 <input asp-for="Birthdate" />
+                <span asp-validation-for="Birthdate" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="6">
                 <label asp-for="GrossSalary">
                 </label>
                 <input asp-for="GrossSalary" placeholder="type here" ></>
+                <span asp-validation-for="GrossSalary" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="7">
                 <label asp-for="NetSalary">
                 </label>
                 <input asp-for="NetSalary" placeholder="type here" ></>
+                <span asp-validation-for="NetSalary" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="8">
                 <label asp-for="Country">
                 </label>
                 <input asp-for="Country" id="countryInput" placeholder="Your current country of residence"></>
+                <span asp-validation-for="Country" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="9">
                 <label asp-for="City">
                 </label>
                 <input asp-for="City" id="cityInput" placeholder="City In "></>
+                <span asp-validation-for="City" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="10">
                 <label asp-for="DepartmentId">
                 </label>
                 <input asp-for="DepartmentId" placeholder="type here"></>
+                <span asp-validation-for="DepartmentId" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="11">
                 <label asp-for="YearsOfExperince">
                 </label>
                 <input asp-for="YearsOfExperince" placeholder="type here"></>
+                <span asp-validation-for="YearsOfExperince" style="color:red"></span>
             </div>
 
             <div class="field" tabindex="12">
                 <label asp-for="TaskId">
                 </label>
                 <input asp-for="TaskId" placeholder="Got Any Tasks?"></>
+                <span asp-validation-for="TaskId" style="color:red"></span>
             </div>
 
             <button type="submit">Add Employee</button>
@@ -252,3 +264,8 @@
         cityInput.placeholder = `City in ${country}`;
     }
 </script>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
