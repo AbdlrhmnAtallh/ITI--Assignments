@@ -33,7 +33,7 @@ namespace FinalProject_HRsystem.Services
             item.YearsOfExperince = employee.YearsOfExperince;
             item.Title=employee.Title;
             item.Image=employee.Image;
-
+            
             return 1;
         }
         public Employee? GetAnEmployee(int id)

@@ -36,14 +36,14 @@
                 <td>@item.Title</td>
                 <td>@item.DepartmentId</td>
                 <td>@item.TaskId</td>
-                <td>@item.Birthdate</td>
+                <td>@item.Birthdate.ToString("dd/MM/yyyy")</td>
                 <td>@item.YearsOfExperince</td>
                 <td>@item.Country, @item.City</td>
                 <td>@item.Gender</td>
                 <td>@item.GrossSalary</td>
                 <td>@item.NetSalary</td>
-                <td><a asp-action="Update" asp-asp-route="@item.Id">Edit</a></td>
-                <td><a asp-action="Delete" asp-asp-route="@item.Id">Delete</a></td>
+                <td><a asp-action="Update" asp-route-id="@item.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
 
             </tr>
         }

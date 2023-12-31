@@ -139,6 +139,7 @@
 
     
     <h1>@ViewData["Title"] Employee!</h1>
+    <hr />
 
     <!-- partial:index.partial.html -->
     <div class="container">
@@ -149,7 +150,7 @@
             <div class="field" tabindex="1">
                 <label asp-for="Id">
                 </label>
-                <input asp-for="Id" />
+                <input asp-for="Id" placeholder="Unique Value"/>
                 <span asp-validation-for="Id" style="color:red"></span>
             </div>
 
@@ -177,9 +178,7 @@
             </div>
 
             <div class="field" tabindex="5">
-                <label asp-for="Birthdate">
-                    <i class="bi bi-calendar-date"></i> Date Of Birth
-                </label>
+                <label asp-for="Birthdate"></label>
                 <input asp-for="Birthdate" />
                 <span asp-validation-for="Birthdate" style="color:red"></span>
             </div>
@@ -233,7 +232,7 @@
                 <span asp-validation-for="TaskId" style="color:red"></span>
             </div>
 
-            <button type="submit">Add Employee</button>
+            <button type="submit">@ViewData["Title"] Employee</button>
             <div class="Pages">
             
                 <span>
