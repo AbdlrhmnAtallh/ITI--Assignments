@@ -6,9 +6,9 @@ namespace FinalProject_HRsystem.Services
     {
         void Add(Employee employee);
         List<Employee> All();
-        int Delete(int id);
-        int DeleteAll();
+        void Delete(int id);
+        void DeleteAll();
         Employee? GetAnEmployee(int id);
-        int Update(Employee employee);
+        void Update(Employee employee);
     }
 }

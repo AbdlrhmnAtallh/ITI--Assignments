@@ -22,8 +22,16 @@ namespace FinalProject_HRsystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                iemployeelayer.Add(employee);
-                return RedirectToAction("All",iemployeelayer.All);
+                try
+                {
+                    iemployeelayer.Add(employee);
+                    return RedirectToAction("All", iemployeelayer.All());
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("",ex.Message);
+                }
+               
             }
             return View(employee);
         }
@@ -38,21 +46,37 @@ namespace FinalProject_HRsystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (iemployeelayer.Update(employee) !=0)
+                try
                 {
+                    iemployeelayer.Update(employee);
                     return View("All", iemployeelayer.All());
                 }
-                ModelState.AddModelError("", "Something Went Wrong. Connect with me at abdlrhmntt@gmail.com");
+                catch(Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
             }
             return View("Add",employee);
         }
         public IActionResult All()
         {
+            if (iemployeelayer.All() == null)
+            {
+                return View("EmptyList");
+            }
             return View(iemployeelayer.All());
         }
         public IActionResult Delete(int id)
         {
-            iemployeelayer.Delete(id);
+            try
+            {
+                iemployeelayer.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            
             return View("All", iemployeelayer.All());
         }
         public IActionResult DeleteAll()

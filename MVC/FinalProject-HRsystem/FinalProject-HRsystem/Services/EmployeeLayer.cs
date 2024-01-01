@@ -7,62 +7,103 @@ namespace FinalProject_HRsystem.Services
 
         public void Add(Employee employee)
         {
-            Employees.Add(employee);
+            try
+            {
+                Employees.Add(employee);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Can't Add This Employee",ex);
+            }
         }
         public List<Employee> All()
         {
             return Employees;
         }
-        public int Update(Employee employee)
+        public void Update(Employee employee)
         {
-            var item = Employees.FirstOrDefault(e => e.Id == employee.Id);
-            
-            if (item == null)
+            try
             {
-                return 0;
-            }
+                var item = Employees.FirstOrDefault(e => e.Id == employee.Id);
 
-            item.Name = employee.Name;
-            item.Birthdate = employee.Birthdate;
-            item.City = employee.City;
-            item.Country = employee.Country;
-            item.DepartmentId = employee.DepartmentId;
-            item.GrossSalary = employee.GrossSalary;
-            item.NetSalary = employee.NetSalary;
-            item.TaskId = employee.TaskId;
-            item.YearsOfExperince = employee.YearsOfExperince;
-            item.Title=employee.Title;
-            item.Image=employee.Image;
-            
-            return 1;
+                if (item == null)
+                {
+                    throw new Exception("No employee matches this ID.");
+                }
+                else
+                {
+                    item.Name = employee.Name;
+                    item.Birthdate = employee.Birthdate;
+                    item.City = employee.City;
+                    item.Country = employee.Country;
+                    item.DepartmentId = employee.DepartmentId;
+                    item.GrossSalary = employee.GrossSalary;
+                    item.NetSalary = employee.NetSalary;
+                    item.TaskId = employee.TaskId;
+                    item.YearsOfExperince = employee.YearsOfExperince;
+                    item.Title = employee.Title;
+                    item.Image = employee.Image;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong. "+ex.Message);
+            }
         }
         public Employee? GetAnEmployee(int id)
         {
-            var item = Employees.FirstOrDefault(e => e.Id == id);
-            if (item == null)
+            try
             {
-                return null;
+                var item = Employees.FirstOrDefault(e => e.Id == id);
+                if (item == null)
+                {
+                    throw new Exception("No employee matches this ID");
+                }
+                else
+                {
+                    return item;
+                }
             }
-            return item;
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong," + ex.Message);
+            }
+            
+            
         }
-        public int Delete(int id)
+        public void Delete(int id)
         {
-            var employee = Employees.FirstOrDefault(e => e.Id == id);
-            if (employee == null)
+            try
             {
-                return 0;
+                var employee = Employees.FirstOrDefault(e => e.Id == id);
+                if (employee == null)
+                {
+                    throw new Exception("No employee matches this ID.");
+                }
+                else
+                {
+                    Employees.Remove(employee);
+                }
             }
-            Employees.Remove(employee);
-            return 1;
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong." + ex.Message);
+            }
         }
-        public int DeleteAll()
+        public void DeleteAll()
         {
-            if (Employees.Count == 0)
+            try
             {
-                return 0;
+                Employees.RemoveRange(0, Employees.Count);
+                if (Employees.Count == 0)
+                {
+                    throw new Exception("The Employee List is Empty");
+                }
             }
-            Employees.RemoveRange(0, Employees.Count);
-            return 1;
+            catch (Exception ex)
+            {
+                throw new Exception("somthing went wrong." + ex.Message);
+            }
         }
     }
 }
