@@ -1,10 +1,16 @@
 ﻿@model Department
 @{
+    SelectList items;
     if (Model == null)
     {
         ViewData["Title"] = "Add";
+        items = new SelectList(ViewBag.Employees, "Id", "Name");
     }
-    else ViewData["Title"] = "Update";
+    else 
+    {
+        ViewData["Title"] = "Update";
+        items = new SelectList(ViewBag.Employees, "Id", "Name", Model.DepartmentHeadId);
+    }
 }
 <title>@ViewData["Title"]</title>
 <h1>@ViewData["Title"] Department</h1>
@@ -12,27 +18,60 @@
 <h4>Here You Can @ViewData["Title"] Department</h4>
 <hr />
 
-<form asp-action="@ViewData["Title"]">
-    <div asp-validation-summary="All"></div>
-    
-    <div>
-        <label asp-for="Id"></label>
-        <input asp-for="Id" readonly />
-        <span asp-validation-for="Id"></span>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Responsive Contact Form</title>
+    <link rel='stylesheet' href='https://codepen.io/uzcho_/pen/RmOWmw.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <link rel="stylesheet" href="~/css/AddForm.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
-    </div>
+</head>
+<body>
+   
+    <form asp-action="@ViewData["Title"]">
+        <div asp-validation-summary="All"></div>
 
-    <div>
-        <label asp-for="DepartmentHeadId"></label>
-        <input asp-for="DepartmentHeadId" />
-        <span asp-validation-for="DepartmentHeadId"></span>
-    </div>
-    @*I want to make select List To select Employees that work at department*@
-    <button type="submit" name="Add"></button>
-    <button asp-action="Index" asp-controller="Home" name="Home"></button>
-</form>
+        <div>
+            <label asp-for="Id"></label>
+            <input asp-for="Id" />
+            <span asp-validation-for="Id"></span>
+        </div>
+
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div>
+            <label asp-for="DepartmentHeadId"></label>
+            <select asp-for="DepartmentHeadId" asp-items="items" multiple></select>
+            <span asp-validation-for="DepartmentHeadId"></span>
+        </div>
+        
+        <div>
+            <label asp-for="Employees"></label>
+            <select asp-for="Employees" asp-items="items" multiple></select>
+        </div>
+
+        <button type="submit" >Add Department</button>
+
+        <div class="Pages">
+            <span>
+                Back To <i class="fas fa-long-arrow-alt-right"></i>
+            </span>
+            <a class="fab fa-facebook-f" href="https://facebook.com/uzcho" target="blank_">Home</a>
+            <a class="fab fa-twitter" href="https://twitter.com/uzcho_" target="blank_"></a>
+            <a class="fab fa-instagram" href="https://www.instagram.com/uzcho_" target="blank_"></a>
+            <a class="fab fa-codepen" href="https://codepen.io/uzcho_" target="blank_"></a>
+        </div>
+    </form>
+</body>
+</html>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

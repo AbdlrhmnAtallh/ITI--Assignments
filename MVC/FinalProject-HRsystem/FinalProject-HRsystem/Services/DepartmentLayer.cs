@@ -6,12 +6,18 @@ namespace FinalProject_HRsystem.Services
 {
     public class DepartmentLayer : IDepartmentLayer
     {
-        public List<Department> Departments = new List<Department>();
+        public static List<Department> Departments = new List<Department>();
 
-        public int Add(Department department)
+        public void Add(Department department)
         {
-            Departments.Add(department);
-            return 1;
+            try
+            {
+                Departments.Add(department);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong adding department. " + ex.Message);
+            }
         }
         public void Update(Department department)
         {
@@ -28,7 +34,7 @@ namespace FinalProject_HRsystem.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Error Updating Department.", ex);
+                throw new Exception("Error Updating Department."+ ex);
             }
             
         }
@@ -42,7 +48,7 @@ namespace FinalProject_HRsystem.Services
         }
         public List<Department> All()
         {
-            return Departments.ToList();
+            return Departments;
         }
         public void Remove(int id)
         {
@@ -58,7 +64,7 @@ namespace FinalProject_HRsystem.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Error Removing Department", ex);
+                throw new Exception("Error Removing Department"+ex);
             }
          
         }

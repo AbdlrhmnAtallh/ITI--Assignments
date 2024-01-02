@@ -7,14 +7,17 @@ namespace FinalProject_HRsystem.Controllers
     public class EmployeeController : Controller
     {
         IEmployeeLayer iemployeelayer;
-       public EmployeeController(IEmployeeLayer _iemployeelayer)
-       {
-           iemployeelayer = _iemployeelayer;
-       }
+        IDepartmentLayer idepartmentLayer;
+       public EmployeeController(IEmployeeLayer _iemployeelayer, IDepartmentLayer idepartmentLayer)
+        {
+            iemployeelayer = _iemployeelayer;
+            this.idepartmentLayer = idepartmentLayer;
+        }
 
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.Departments = idepartmentLayer.All();
             return View();
         }
         [HttpPost]
@@ -38,6 +41,7 @@ namespace FinalProject_HRsystem.Controllers
         [HttpGet]
         public IActionResult Update(int  id)
         {
+            ViewBag.Deprtments = idepartmentLayer.All();
             var item = iemployeelayer.GetAnEmployee(id);
             return View("Add",item);
         }

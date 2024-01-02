@@ -136,7 +136,19 @@
 </head>
 <body>
 
-
+    @{
+        SelectList items;
+        if(Model != null)
+        {
+               items = new
+               SelectList(ViewBag.Departments, "Id", "Name", Model.DepartmentId);
+        }
+        else
+        {
+            items = new
+            SelectList(ViewBag.Departments, "Id", "Name");
+        }
+    }
     
     <h1>@ViewData["Title"] Employee!</h1>
     <hr />
@@ -214,7 +226,14 @@
             <div class="field" tabindex="10">
                 <label asp-for="DepartmentId">
                 </label>
-                <input asp-for="DepartmentId" placeholder="type here"></>
+                <select asp-for="DepartmentId" asp-items="items"  >
+                    @{
+                        if (Model == null)
+                        {
+                            <option disabled selected hidden>Select-Department</option>
+                        }
+                    }
+                </select>
                 <span asp-validation-for="DepartmentId" style="color:red"></span>
             </div>
 
@@ -249,7 +268,8 @@
   
 </body>
 </html>
-<script>
+<script>// Get Country Name in City Placeholder 
+
     // Get the input elements
     const countryInput = document.getElementById('countryInput');
     const cityInput = document.getElementById('cityInput');

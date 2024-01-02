@@ -6,13 +6,16 @@ namespace FinalProject_HRsystem.Controllers
     public class DepartmentController : Controller
     {
         IDepartmentLayer iDepartmentLayer;
-        public DepartmentController(IDepartmentLayer _iDepartmentLayer)
+        IEmployeeLayer iEmployeeLayer;
+        public DepartmentController(IDepartmentLayer _iDepartmentLayer,IEmployeeLayer iEmployeeLayer)
         {
             iDepartmentLayer = _iDepartmentLayer;
+            this.iEmployeeLayer = iEmployeeLayer;
         }
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.Employees = iEmployeeLayer.All();
             return View();
         }
         [HttpPost]
@@ -20,21 +23,22 @@ namespace FinalProject_HRsystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (iDepartmentLayer.Add(department) == 0) 
+                try
                 {
-                    ModelState.AddModelError("", "Somthing Went Wrong");
-                }
-                else
-                {
+                    iDepartmentLayer.Add(department);
                     return RedirectToAction("All", iDepartmentLayer.All());
                 }
-                
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
             }
             return View(department);
         }
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
+            ViewBag.Employees = iEmployeeLayer.All();
             return View("Add");
         }
         [HttpPost]
@@ -62,7 +66,7 @@ namespace FinalProject_HRsystem.Controllers
                 ModelState.AddModelError("", "No Departments yet!");
                 // i'll use tosster Notifications here.
                 // i want to redirect To the same action 
-                return View();
+                return View(iDepartmentLayer.All());
             }
             return View(iDepartmentLayer.All());
         }

@@ -20,11 +20,11 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
         [MaxLength(50)]
         public string Name { get; set; }
         [Obsolete("Use the DepartmentHeadId property instead.")]
-        public Employee DepartmentHead { get; set; }
+        public Employee? DepartmentHead { get; set; }
         [Display(Name ="Department Leader")]
         /// There are a Relation 1:1 between Department and Leader
         /// Under Processing
-        public int DepartmentHeadId { get; set; }
+        public int? DepartmentHeadId { get; set; }
 
     }
 }
