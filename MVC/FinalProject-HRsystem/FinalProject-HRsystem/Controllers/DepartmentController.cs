@@ -85,6 +85,11 @@ namespace FinalProject_HRsystem.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        public IActionResult Fill()
+        {
+            iDepartmentLayer.Fill();
+            return View("All", iDepartmentLayer.All());
+        }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FinalProject_HRsystem.Models.DepartmentINFO;
+using FinalProject_HRsystem.Models.EmployeeINFO;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Reflection.Metadata.Ecma335;
 
@@ -7,6 +8,11 @@ namespace FinalProject_HRsystem.Services
     public class DepartmentLayer : IDepartmentLayer
     {
         public static List<Department> Departments = new List<Department>();
+        private readonly IEmployeeLayer iemployeelayer;
+        public DepartmentLayer(IEmployeeLayer iemployeelayer)
+        {
+            this.iemployeelayer = iemployeelayer;
+        }
 
         public void Add(Department department)
         {
@@ -67,6 +73,41 @@ namespace FinalProject_HRsystem.Services
                 throw new Exception("Error Removing Department"+ex);
             }
          
+        }
+        public void Fill()
+        {
+            Departments.Add(
+                new Department
+                {
+                    Id = 1,
+                    Name = "D1",
+                    DepartmentHeadId = 1,
+                    Employees = iemployeelayer.All().Where(e => e.Id == 1).ToList()
+                });
+            Departments.Add(
+                new Department
+                {
+                    Id = 2,
+                    Name = "D2",
+                    DepartmentHeadId = 1,
+                    Employees = iemployeelayer.All().Where(e => e.Id == 2).ToList()
+                });
+            Departments.Add(
+                new Department
+                {
+                    Id = 3,
+                    Name = "D1",
+                    DepartmentHeadId = 1,
+                    Employees = iemployeelayer.All().Where(e => e.Id == 3).ToList()
+                });
+            Departments.Add(
+                new Department
+                {
+                    Id = 1,
+                    Name = "D1",
+                    DepartmentHeadId = 1,
+                    Employees = iemployeelayer.All().Where(e => e.Id == 4).ToList()
+                });
         }
 
     }

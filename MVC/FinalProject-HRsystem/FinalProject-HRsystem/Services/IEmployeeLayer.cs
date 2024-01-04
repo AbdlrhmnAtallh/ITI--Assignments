@@ -10,5 +10,6 @@ namespace FinalProject_HRsystem.Services
         void DeleteAll();
         Employee? GetAnEmployee(int id);
         void Update(Employee employee);
+        public void Fill();
     }
 }

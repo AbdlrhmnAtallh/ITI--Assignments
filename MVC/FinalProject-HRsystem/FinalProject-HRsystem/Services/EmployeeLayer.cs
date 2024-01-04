@@ -105,5 +105,88 @@ namespace FinalProject_HRsystem.Services
                 throw new Exception("somthing went wrong." + ex.Message);
             }
         }
+        public void Fill()
+        {
+            Employees.Add(
+                new Employee
+                {
+                    Id = 1,
+                    Name = "A",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 1,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 2,
+                    Name = "B",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 2,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 3,
+                    Name = "C",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 1,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 4,
+                    Name = "d",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 3,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 5,
+                    Name = "A",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 4,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 2
+                });
+        }
     }
 }

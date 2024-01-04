@@ -88,5 +88,10 @@ namespace FinalProject_HRsystem.Controllers
             iemployeelayer.DeleteAll();
             return View("All", iemployeelayer.All());
         }
+        public IActionResult Fill()
+        {
+            iemployeelayer.Fill();
+            return View("All", iemployeelayer.All());
+        }
     }
 }

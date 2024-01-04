@@ -1,5 +1,6 @@
 ﻿@model Department
 @{
+   
     SelectList items;
     if (Model == null)
     {
@@ -54,7 +55,19 @@
         
         <div>
             <label asp-for="Employees"></label>
-            <select asp-for="Employees" asp-items="items" multiple></select>
+            <select asp-for="Employees" asp-items="items" multiple="multiple"></select>
+        </div>
+
+        <div>
+            <label asp-for="Employees"></label>
+               <select id="Products" asp-for="Employees" class="form-control" multiple>
+                <option value="">Please select products...</option>
+
+                @foreach (var r in ViewBag.Employees)
+                {
+                    <option value="@r.id">@r.Name</option>
+                }
+            </select>
         </div>
 
         <button type="submit" >Add Department</button>
