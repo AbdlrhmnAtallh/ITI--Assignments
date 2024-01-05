@@ -20,21 +20,23 @@
                 <td>@item.Name</td>
                 <td>@item.DepartmentHeadId</td>
                 <td>
-                    @foreach(var employee in item.Employees)
-                    {
-                        @*<text>
-                            @string.Join(",",employee.Name)
-                        </text>*@
-                        <p>@employee.Name</p>
+                    @{
+                        if (item.Employees == null)
+                        {
+                            <text>No Employees</text>
+                        }
+                        else
+                            foreach (var employee in item.Employees)
+                            {
+                                foreach (var e in ViewBag.Employees)
+                                {
+                                    if (e.Id == employee)
+                                    {
+                                        <text>@string.Join(", ",e.Name)</text>
+                                    }
+                                }
+                            }
                     }
-                    @*@if (item.Employees.Any())
-                    {
-                        <text>@string.Join(", ", item.Employees)</text>
-                    }
-                    else
-                    {
-                        <text>No employees</text>
-                    }*@
                 </td>
                 <td><a asp-action="Update">Edit</a></td>
                 <td><a asp-action="Remove">Delete</a></td>
@@ -42,3 +44,4 @@
         }
     </tbody>
 </table>
+  

@@ -1,4 +1,4 @@
-﻿@model List<Employee>
+﻿@*@model List<Employee>
 
 <title>All Employees</title>
 <h1>All Employees</h1>
@@ -8,6 +8,33 @@
     Employee e = new Employee();
     //SelectList items = new SelectList();
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="~/css/Table.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<div class="card">
+    <div class="table-title">
+        <h2>CSS ONLY TABLE</h2>
+    </div>
+    <div class="button-container">
+        <span>These buttons aren't working ></span>
+        <button class="danger" title="Delete Selected">
+            <svg viewBox="0 0 448 512" width="16" title="trash-alt">
+                <path d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
+            </svg>
+        </button>
+        <button class="primary" title="Add New Data">
+            <svg viewBox="0 0 512 512" width="16" title="plus-circle">
+                <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
 <table>
     <thead>
       <tr>
@@ -49,4 +76,122 @@
         }
     </tbody>
     
-</table>
+</table>*@
+
+
+
+
+
+
+
+@model List<Employee>
+@{
+   Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="~/css/Table.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+
+    
+    <!-- partial -->
+
+    <div class="container">
+        <div class="card">
+            <div class="table-title">
+                <h2>All Employees</h2>
+            </div>
+            <div class="button-container">
+                <span>These buttons aren't working ></span>
+                <button class="danger" title="Delete Selected">
+                    <svg viewBox="0 0 448 512" width="16" title="trash-alt">
+                        <path d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
+                    </svg>
+                </button>
+                <button class="primary" title="Add New Data">
+                    <svg viewBox="0 0 512 512" width="16" title="plus-circle">
+                        <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="table-concept">
+                <input class="table-radio" type="radio" name="table_radio" id="table_radio_0" checked="checked" />
+                <div class="table-display">
+                    Showing 1 to 20
+                    of 95 items
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Job Title</th>
+                            <th>Department</th>
+                            <th>Tasks</th>
+                            <th>Age</th>
+                            <th>Years OF Experince</th>
+                            <th>Country, City</th>
+                            <th>Gender</th>
+                            <th>Gross Salary</th>
+                            <th>Net Salary</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Title</td>
+                                <td>@item.DepartmentId</td>
+                                <td>@item.TaskId</td>
+                                <td>@item.Birthdate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.YearsOfExperince</td>
+                                <td>@item.Country, @item.City</td>
+                                <td>@item.Gender</td>
+                                <td>@item.GrossSalary</td>
+                                <td>@item.NetSalary</td>
+                                <td><a asp-action="Update" asp-route-id="@item.Id">Edit</a></td>
+                                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <label class="disabled" for="table_radio_-1">&laquo; Previous</label>
+                    <label class="active" for="table_radio_0" id="table_pager_0">1</label>
+                    <label for="table_radio_1" id="table_pager_1">2</label>
+                    <label for="table_radio_2" id="table_pager_2">3</label>
+                    <label for="table_radio_3" id="table_pager_3">4</label>
+                    <label for="table_radio_4" id="table_pager_4">5</label>
+                    <label for="table_radio_1">Next &raquo;</label>
+                </div>
+                <input class="table-radio" type="radio" name="table_radio" id="table_radio_1" />
+                <div class="table-display">
+                    Showing 21 to 40
+                    of 95 items
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

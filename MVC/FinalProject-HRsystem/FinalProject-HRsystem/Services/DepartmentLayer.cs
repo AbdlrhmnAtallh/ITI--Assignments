@@ -82,15 +82,15 @@ namespace FinalProject_HRsystem.Services
                     Id = 1,
                     Name = "D1",
                     DepartmentHeadId = 1,
-                    Employees = iemployeelayer.All().Where(e => e.Id == 1).ToList()
-                });
+                    Employees = new List<int>{ 1, 2 }
+                }) ;
             Departments.Add(
                 new Department
                 {
                     Id = 2,
                     Name = "D2",
                     DepartmentHeadId = 1,
-                    Employees = iemployeelayer.All().Where(e => e.Id == 2).ToList()
+                    Employees = new List<int> { 2, 3 }
                 });
             Departments.Add(
                 new Department
@@ -98,7 +98,7 @@ namespace FinalProject_HRsystem.Services
                     Id = 3,
                     Name = "D1",
                     DepartmentHeadId = 1,
-                    Employees = iemployeelayer.All().Where(e => e.Id == 3).ToList()
+                    Employees = new List<int> { 3, 4 }
                 });
             Departments.Add(
                 new Department
@@ -106,7 +106,7 @@ namespace FinalProject_HRsystem.Services
                     Id = 1,
                     Name = "D1",
                     DepartmentHeadId = 1,
-                    Employees = iemployeelayer.All().Where(e => e.Id == 4).ToList()
+                    Employees = new List<int> { 4, 1 }
                 });
         }
 

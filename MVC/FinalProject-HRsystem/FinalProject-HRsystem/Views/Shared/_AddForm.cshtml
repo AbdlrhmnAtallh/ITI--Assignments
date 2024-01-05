@@ -140,12 +140,12 @@
         SelectList items;
         if(Model != null)
         {
-               items = new
-               SelectList(ViewBag.Departments, "Id", "Name", Model.DepartmentId);
+                items = new
+               SelectList(ViewBag.Departments, "Id", "Name",Model.DepartmentId);
         }
         else
         {
-            items = new
+             items = new
             SelectList(ViewBag.Departments, "Id", "Name");
         }
     }
@@ -226,7 +226,8 @@
             <div class="field" tabindex="10">
                 <label asp-for="DepartmentId">
                 </label>
-                <select asp-for="DepartmentId" asp-items="items"  >
+               
+                <select asp-for="DepartmentId" asp-items="items">
                     @{
                         if (Model == null)
                         {

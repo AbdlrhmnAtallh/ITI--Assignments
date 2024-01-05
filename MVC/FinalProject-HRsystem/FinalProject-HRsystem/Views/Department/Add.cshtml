@@ -55,20 +55,21 @@
         
         <div>
             <label asp-for="Employees"></label>
-            <select asp-for="Employees" asp-items="items" multiple="multiple"></select>
+            <select asp-for="Employees" asp-items="items" ></select>
         </div>
-
+@*
         <div>
             <label asp-for="Employees"></label>
-               <select id="Products" asp-for="Employees" class="form-control" multiple>
-                <option value="">Please select products...</option>
+               <select asp-for="Employees" multiple>
+                <option value="">Please select Employees...</option>
 
                 @foreach (var r in ViewBag.Employees)
                 {
-                    <option value="@r.id">@r.Name</option>
-                }
+                    <option value="@r" multiple>@r.Name</option>
+                } 
+                
             </select>
-        </div>
+        </div>*@
 
         <button type="submit" >Add Department</button>
 

@@ -61,6 +61,7 @@ namespace FinalProject_HRsystem.Controllers
         }
         public IActionResult All()
         {
+            ViewBag.Employees = iEmployeeLayer.All();
             if (iDepartmentLayer.IsEmpty())
             {
                 ModelState.AddModelError("", "No Departments yet!");
@@ -87,6 +88,7 @@ namespace FinalProject_HRsystem.Controllers
         }
         public IActionResult Fill()
         {
+            ViewBag.Employees = iEmployeeLayer.All();
             iDepartmentLayer.Fill();
             return View("All", iDepartmentLayer.All());
         }

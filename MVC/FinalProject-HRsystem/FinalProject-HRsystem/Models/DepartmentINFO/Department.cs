@@ -7,12 +7,12 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
         public int Id { get; set; }
         public string Name { get; set; }
         //public Employee? DepartmentHead { get; set; }
-        public  List<Employee>? Employees { get; set; }
+        public  List<int> Employees { get; set; }
+        public int? DepartmentHeadId { get; set; }
         public Department()
         {
             // Initialize the Employees collection
-            Employees = new List<Employee>();
+            Employees = new List<int>();
         }
-        public int? DepartmentHeadId { get; set; }
     }
 }
