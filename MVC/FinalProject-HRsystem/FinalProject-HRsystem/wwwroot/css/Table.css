@@ -1,6 +1,6 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 
-body {
+/*body {
     font-family: "Open Sans", sans-serif;
     background-color: #e4e4e4;
     width: 100vw;
@@ -8,8 +8,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
+    overflow: auto;
+}*/
 
 .card {
     background-color: #ffffff;

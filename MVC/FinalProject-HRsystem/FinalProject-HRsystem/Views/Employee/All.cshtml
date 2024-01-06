@@ -85,29 +85,31 @@
 
 
 @model List<Employee>
+
 @{
-   Layout = "_Layout";
+   //Layout =_Layout;
 }
 
 
-<!DOCTYPE html>
+@*<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="~/css/Table.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-</head>
-<body>
+</head>*@
+    <link rel="stylesheet" href="~/css/Table.css">
+
+
     <!-- partial:index.partial.html -->
 
     
     <!-- partial -->
 
-    <div class="container">
+    
         <div class="card">
             <div class="table-title">
                 <h2>All Employees</h2>
@@ -128,8 +130,7 @@
             <div class="table-concept">
                 <input class="table-radio" type="radio" name="table_radio" id="table_radio_0" checked="checked" />
                 <div class="table-display">
-                    Showing 1 to 20
-                    of 95 items
+                   You Can Select How To Display
                 </div>
                 <table>
                     <thead>
@@ -175,23 +176,7 @@
                         }
                     </tbody>
                 </table>
-                <div class="pagination">
-                    <label class="disabled" for="table_radio_-1">&laquo; Previous</label>
-                    <label class="active" for="table_radio_0" id="table_pager_0">1</label>
-                    <label for="table_radio_1" id="table_pager_1">2</label>
-                    <label for="table_radio_2" id="table_pager_2">3</label>
-                    <label for="table_radio_3" id="table_pager_3">4</label>
-                    <label for="table_radio_4" id="table_pager_4">5</label>
-                    <label for="table_radio_1">Next &raquo;</label>
-                </div>
-                <input class="table-radio" type="radio" name="table_radio" id="table_radio_1" />
-                <div class="table-display">
-                    Showing 21 to 40
-                    of 95 items
-                </div>
-
             </div>
         </div>
-    </div>
-</body>
-</html>
+    
+
