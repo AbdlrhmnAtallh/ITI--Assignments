@@ -74,6 +74,11 @@ namespace FinalProject_HRsystem.Services
             }
          
         }
+        public Department GetDepartment(int id)
+        {
+            var department = Departments.FirstOrDefault(e => e.Id == id);
+            return department;
+        }
         public void Fill()
         {
             Departments.Add(

@@ -9,6 +9,7 @@ namespace FinalProject_HRsystem.Services
         void Update(Department department);
         public bool IsEmpty();
         public List<Department> All();
+        public Department GetDepartment(int id);
         public void Fill();
     }
 }
