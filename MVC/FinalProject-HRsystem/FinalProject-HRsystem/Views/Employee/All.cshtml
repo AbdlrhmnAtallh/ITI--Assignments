@@ -1,20 +1,27 @@
 ﻿
 @model List<Employee>
 
-@{
+@*@{
     Layout = null;
-}
-<link rel="stylesheet" href="~/css/Table.css">
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}*@
+@*<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  @*<link rel="stylesheet" href="~/css/Table.css" />*@
+ @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>*@
+
 <title>All Employees</title>
 
-<a asp-action="Index" asp-controller="Home" class="btn btn-primary">Home</a>
 
-<div class="card">
-    <div class="table-title">
+    <div >
         <h2>All Employees</h2>
     </div>
-    <div class="button-container">
+    <div >
         <span>These buttons aren't working ></span>
         <button class="danger" title="Delete Selected">
             <svg viewBox="0 0 448 512" width="16" title="trash-alt">
@@ -27,12 +34,13 @@
             </svg>
         </button>
     </div>
-    <div class="table-concept">
+<div>
+    <div >
         <input class="table-radio" type="radio" name="table_radio" id="table_radio_0" checked="checked" />
         <div class="table-display">
             You Can Select How To Display
         </div>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th></th>
@@ -52,9 +60,15 @@
                 </tr>
             </thead>
             <tbody>
+                @{
+                    string[] arr = { "success", "danger", "info", "warning", "active" };
+                    int counter = -1;
+                }
                 @foreach (var item in Model)
                 {
-                    <tr>
+                    if(counter ==4){ counter = -1; }
+                    counter++;
+                    <tr style="background-color:@arr[counter];">
                         <td>
                             <input type="checkbox" />
                         </td>
@@ -71,7 +85,6 @@
                         <td>@item.NetSalary</td>
                         <td><a asp-action="Update" asp-route-id="@item.Id">Edit</a></td>
                         <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
-
                     </tr>
                 }
             </tbody>
@@ -79,6 +92,4 @@
     </div>
             
  </div>
-
-
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

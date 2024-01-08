@@ -1,62 +1,17 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 
-body {
+/*body {
     font-family: "Open Sans", sans-serif;
     background-color: #e4e4e4;
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
     /*overflow: auto;*/
-}
-
-ul, ol {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding: 0;
-}
-
-    ul ul,
-    ol ul,
-    ul ol,
-    ol ol {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    ul li, ol li {
-        margin-bottom: 0;
-        outline: 0;
-    }
-
-        ul li.active a {
-            color: #ce3c83;
-        }
-
-        ul li a {
-            color: #151515;
-        }
-
-            ul li a:hover {
-                color: #ce3c83;
-                text-decoration: none;
-            }
-
-        ul li:last-child,
-        ol li:last-child {
-            margin-bottom: 0;
-        }
-
+/*}*/
 /*
-body{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    overflow:hidden;
-}
-*/.card {
+.card {
     background-color: #ffffff;
     width: 100%;
     max-width: 100%;
@@ -65,15 +20,17 @@ body{
     flex-direction: column;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
-
+*/
+/*
 .table-concept {
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*max-height: 100%;*/
-   /* overflow: auto;*/
-    /*box-sizing: border-box;*/
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
 }
-    /*
+*/    
+/*
     .table-concept .table-radio {
         display: none;
     }
@@ -86,7 +43,7 @@ body{
                 width: 100%;
                 display: table;
             }
-    */
+    
                 .table-concept .table-radio:checked + .table-display + table + .pagination {
                     display: flex;
                 }
@@ -98,12 +55,14 @@ body{
                     }
     
                     .table-concept .table-radio:checked + .table-display + table + .pagination > label.disabled {
-                        /*color: #ffffff;
-                        background-color: #b5b5b5;*/
-                       /* cursor: default;*/
+                        color: #ffffff;
+                        background-color: #b5b5b5;
+                        cursor: default;
                     }
 
-    .table-concept .table-display {
+*/
+/*
+.table-concept .table-display {
         background-color: #e2e2e2;
         text-align: right;
         padding: 10px;
@@ -111,17 +70,17 @@ body{
         position: sticky;
         left: 0;
     }
-/*
+
     .table-concept table {
         background-color: #ffffff;
         font-size: 16px;
         border-collapse: collapse;
         display: none;
-    }*/
+    }
 
-       /* .table-concept table tr:last-child td {
+        .table-concept table tr:last-child td {
             border-bottom: 0;
-        }*/
+        }
 
         .table-concept table tr th,
         .table-concept table tr td {
@@ -146,7 +105,7 @@ body{
             white-space: nowrap;
         }
 
-     /*   .table-concept table tbody tr {
+        .table-concept table tbody tr {
             transition: background-color 150ms ease-out;
         }
 
@@ -156,9 +115,9 @@ body{
 
             .table-concept table tbody tr:hover {
                 background-color: #ebebeb;
-            }*/
+            }
 
-   /* .table-concept .pagination {
+    .table-concept .pagination {
         background-color: #8f8f8f;
         width: 100%;
         display: none;
@@ -167,12 +126,13 @@ body{
         left: 0;
     }
 
-        .table-concept .pagination > label {
+*/     
+/*.table-concept .pagination > label {
             background-color: #8f8f8f;
             color: #ffffff;
             padding: 10px;
             cursor: pointer;
-        }*/
+        }
 
             .table-concept .pagination > label:hover {
                 background-color: darkgray;
@@ -181,18 +141,19 @@ body{
             .table-concept .pagination > label:active {
                 background-color: #767676;
             }
-
-/*.table-title {
+*/
+/*
+.table-title {
     color: #ffffff;
     background-color: #2f2f2f;
     padding: 15px;
-}*/
+}
 
     .table-title h2 {
         margin: 0;
         padding: 0;
     }
-
+*/
 .button-container {
     width: 100%;
     box-sizing: border-box;
