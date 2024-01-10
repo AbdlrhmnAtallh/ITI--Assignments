@@ -34,6 +34,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     item.Name = department.Name;
                     item.DepartmentHeadId = department.DepartmentHeadId;
+                    item.Employees = department.Employees;
                 }
                 else
                     throw new Exception("Department Not Found");
