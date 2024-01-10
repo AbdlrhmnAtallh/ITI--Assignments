@@ -43,6 +43,7 @@ namespace FinalProject_HRsystem.Services
                     item.YearsOfExperince = employee.YearsOfExperince;
                     item.Title = employee.Title;
                     item.Image = employee.Image;
+                    item.Gender = employee.Gender;
                 }
             }
             catch(Exception ex)
@@ -187,6 +188,10 @@ namespace FinalProject_HRsystem.Services
                     YearsOfExperince = 3,
                     TaskId = 2
                 });
+        }
+        public List<Employee> Sort(List<Employee> employees,string sortby)
+        {
+            for()
         }
     }
 }

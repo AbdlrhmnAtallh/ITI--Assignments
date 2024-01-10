@@ -53,6 +53,7 @@ namespace FinalProject_HRsystem.Controllers
                 try
                 {
                     iemployeelayer.Update(employee);
+                    ViewBag.Departments = idepartmentLayer.All();
                     return View("All", iemployeelayer.All());
                 }
                 catch(Exception ex)
