@@ -55,7 +55,7 @@ namespace FinalProject_HRsystem.Services
         }
         public List<Department> All()
         {
-            return Departments;
+            return Departments.ToList();
         }
         public void Remove(int id)
         {

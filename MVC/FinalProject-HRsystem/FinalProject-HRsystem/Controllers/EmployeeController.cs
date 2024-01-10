@@ -41,7 +41,7 @@ namespace FinalProject_HRsystem.Controllers
         [HttpGet]
         public IActionResult Update(int  id)
         {
-            ViewBag.Deprtments = idepartmentLayer.All();
+            ViewBag.Departments = idepartmentLayer.All().ToList();
             var item = iemployeelayer.GetAnEmployee(id);
             return View("Add",item);
         }

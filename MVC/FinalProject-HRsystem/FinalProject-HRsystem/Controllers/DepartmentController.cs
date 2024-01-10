@@ -39,13 +39,13 @@ namespace FinalProject_HRsystem.Controllers
         public IActionResult Update(int id)
         {
             ViewBag.Employees = iEmployeeLayer.All().ToList();
-            var employee = iDepartmentLayer.GetDepartment(id);
-            if(employee == null)
+            var department = iDepartmentLayer.GetDepartment(id);
+            if(department == null)
             {
                 // needs Notifiation 
                 return View("All", iDepartmentLayer.All());
             }
-            return View("Add",employee);
+            return View("Add",department);
         }
         [HttpPost]
         public IActionResult Update (Department department)
