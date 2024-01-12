@@ -94,5 +94,9 @@ namespace FinalProject_HRsystem.Controllers
             iemployeelayer.Fill();
             return View("All", iemployeelayer.All());
         }
+        public IActionResult Sort()
+        {
+            return View("All",iemployeelayer.Sort(iemployeelayer.All()));
+        }
     }
 }

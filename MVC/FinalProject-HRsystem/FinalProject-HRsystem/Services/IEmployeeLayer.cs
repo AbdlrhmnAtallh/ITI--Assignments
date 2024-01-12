@@ -11,5 +11,6 @@ namespace FinalProject_HRsystem.Services
         Employee? GetAnEmployee(int id);
         void Update(Employee employee);
         public void Fill();
+        public List<Employee> Sort(List<Employee> employees);
     }
 }
