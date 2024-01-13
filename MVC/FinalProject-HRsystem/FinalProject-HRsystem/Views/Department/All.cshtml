@@ -18,7 +18,13 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
-                <td>@item.DepartmentHeadId</td>
+                @foreach(var i in ViewBag.Employees)
+                {
+                    if (i.Id == item.DepartmentHeadId)
+                    {
+                        <td>@i.Name</td>
+                    }
+                }
                 <td>
                     @{
                         if (item.Employees == null)

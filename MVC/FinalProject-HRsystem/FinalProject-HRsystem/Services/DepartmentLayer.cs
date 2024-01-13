@@ -55,7 +55,7 @@ namespace FinalProject_HRsystem.Services
         }
         public List<Department> All()
         {
-            return Departments.ToList();
+            return Departments;
         }
         public void Remove(int id)
         {
@@ -86,7 +86,7 @@ namespace FinalProject_HRsystem.Services
                 new Department
                 {
                     Id = 1,
-                    Name = "D1",
+                    Name = "Software",
                     DepartmentHeadId = 1,
                     Employees = new List<int>{ 1, 2 }
                 }) ;
@@ -94,15 +94,15 @@ namespace FinalProject_HRsystem.Services
                 new Department
                 {
                     Id = 2,
-                    Name = "D2",
-                    DepartmentHeadId = 1,
+                    Name = "Finance",
+                    DepartmentHeadId = 2,
                     Employees = new List<int> { 2, 3 }
                 });
             Departments.Add(
                 new Department
                 {
                     Id = 3,
-                    Name = "D1",
+                    Name = "Seals",
                     DepartmentHeadId = 1,
                     Employees = new List<int> { 3, 4 }
                 });
@@ -110,11 +110,10 @@ namespace FinalProject_HRsystem.Services
                 new Department
                 {
                     Id = 1,
-                    Name = "D1",
+                    Name = "Operations",
                     DepartmentHeadId = 1,
                     Employees = new List<int> { 4, 1 }
                 });
         }
-
     }
 }

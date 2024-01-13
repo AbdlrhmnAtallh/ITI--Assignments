@@ -49,27 +49,20 @@
 
         <div>
             <label asp-for="DepartmentHeadId"></label>
-            <select asp-for="DepartmentHeadId" asp-items="items" multiple></select>
+            <select asp-for="DepartmentHeadId" asp-items="items" class="dropdown-item"></select>
             <span asp-validation-for="DepartmentHeadId"></span>
         </div>
         
         <div>
             <label asp-for="Employees"></label>
-            <select asp-for="Employees" asp-items="items" ></select>
+            <select asp-for="Employees" asp-items="items" class="dropdown-item" ></select>
+            
         </div>
-@*
-        <div>
-            <label asp-for="Employees"></label>
-               <select asp-for="Employees" multiple>
-                <option value="">Please select Employees...</option>
 
-                @foreach (var r in ViewBag.Employees)
-                {
-                    <option value="@r" multiple>@r.Name</option>
-                } 
-                
-            </select>
-        </div>*@
+
+
+
+
 
         <button type="submit" >Add Department</button>
 

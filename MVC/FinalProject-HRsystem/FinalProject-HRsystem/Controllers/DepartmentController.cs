@@ -15,7 +15,7 @@ namespace FinalProject_HRsystem.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Employees = iEmployeeLayer.All();
+            ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View();
         }
         [HttpPost]

@@ -112,30 +112,30 @@ namespace FinalProject_HRsystem.Services
                 new Employee
                 {
                     Id = 1,
-                    Name = "A",
-                    Birthdate = new DateOnly(2000, 2, 3),
-                    City = "Cairo",
+                    Name = "Abdelrhman",
+                    Birthdate = new DateOnly(2001, 8, 25),
+                    City = "Alexandria",
                     Country = "Egypt",
                     Gender = "Male",
                     GrossSalary = 10000,
-                    NetSalary = 100,
+                    NetSalary =9000,
                     DepartmentId = 1,
-                    Title = "Web Developer",
-                    YearsOfExperince = 3,
+                    Title = "Software Engineer",
+                    YearsOfExperince = 1,
                     TaskId = 1
                 });
             Employees.Add(
                 new Employee
                 {
                     Id = 2,
-                    Name = "B",
+                    Name = "Tony",
                     Birthdate = new DateOnly(2000, 2, 3),
-                    City = "Cairo",
-                    Country = "Egypt",
+                    City = "London",
+                    Country = "UK",
                     Gender = "Male",
-                    GrossSalary = 10000,
-                    NetSalary = 100,
-                    DepartmentId = 2,
+                    GrossSalary = 9000,
+                    NetSalary = 7000,
+                    DepartmentId = 1,
                     Title = "Web Developer",
                     YearsOfExperince = 3,
                     TaskId = 1
@@ -144,24 +144,24 @@ namespace FinalProject_HRsystem.Services
                 new Employee
                 {
                     Id = 3,
-                    Name = "C",
-                    Birthdate = new DateOnly(2000, 2, 3),
-                    City = "Cairo",
-                    Country = "Egypt",
-                    Gender = "Male",
-                    GrossSalary = 10000,
-                    NetSalary = 100,
-                    DepartmentId = 1,
-                    Title = "Web Developer",
-                    YearsOfExperince = 3,
+                    Name = "Sophia",
+                    Birthdate = new DateOnly(1998, 4, 10),
+                    City = "Bercalona",
+                    Country = "Spain",
+                    Gender = "Female",
+                    GrossSalary = 8000,
+                    NetSalary = 8000,
+                    DepartmentId = 2,
+                    Title = "Seals",
+                    YearsOfExperince = 4,
                     TaskId = 1
                 });
             Employees.Add(
                 new Employee
                 {
                     Id = 4,
-                    Name = "d",
-                    Birthdate = new DateOnly(2000, 2, 3),
+                    Name = "Ahmed",
+                    Birthdate = new DateOnly(2002, 2, 3),
                     City = "Cairo",
                     Country = "Egypt",
                     Gender = "Male",
@@ -176,16 +176,16 @@ namespace FinalProject_HRsystem.Services
                 new Employee
                 {
                     Id = 5,
-                    Name = "A",
-                    Birthdate = new DateOnly(2000, 2, 3),
-                    City = "Cairo",
+                    Name = "Amira",
+                    Birthdate = new DateOnly(2001, 1, 1),
+                    City = "Alexandria",
                     Country = "Egypt",
-                    Gender = "Male",
-                    GrossSalary = 10000,
-                    NetSalary = 100,
+                    Gender = "Female",
+                    GrossSalary = 6000,
+                    NetSalary = 5500,
                     DepartmentId = 4,
-                    Title = "Web Developer",
-                    YearsOfExperince = 3,
+                    Title = "Customer Server",
+                    YearsOfExperince = 1,
                     TaskId = 2
                 });
         }
