@@ -37,7 +37,7 @@
                 {
                     if(counter ==4){ counter = -1; }
                     counter++;
-                    <tr style="background-color: @arr[counter]" >
+                    <tr class="@arr[counter]" >
                         <td>
                             <input type="checkbox" />
                         </td>
@@ -55,7 +55,7 @@
                     }
                         </td>
                 
-                <td>@item.TaskId</td>
+                       <td>@item.TaskId</td>
                         <td>@item.Birthdate.ToString("dd/MM/yyyy")</td>
                         <td>@item.YearsOfExperince</td>
                         <td>@item.Country, @item.City</td>

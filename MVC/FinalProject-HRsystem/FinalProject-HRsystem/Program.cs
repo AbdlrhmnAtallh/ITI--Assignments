@@ -10,8 +10,8 @@ namespace FinalProject_HRsystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IEmployeeLayer, EmployeeLayer>();
-            builder.Services.AddScoped<IDepartmentLayer, DepartmentLayer>();
+            builder.Services.AddSingleton<IEmployeeLayer, EmployeeLayer>();
+            builder.Services.AddSingleton<IDepartmentLayer, DepartmentLayer>();
 
             var app = builder.Build();
 

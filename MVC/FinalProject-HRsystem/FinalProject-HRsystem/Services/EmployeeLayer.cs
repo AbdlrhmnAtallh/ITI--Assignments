@@ -5,6 +5,90 @@ namespace FinalProject_HRsystem.Services
     {
         public static List<Employee> Employees = new List<Employee>();
 
+        public EmployeeLayer()
+        {
+            Employees.Add(
+                new Employee
+                {
+                    Id = 1,
+                    Name = "Abdelrhman",
+                    Birthdate = new DateOnly(2001, 8, 25),
+                    City = "Alexandria",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 9000,
+                    DepartmentId = 1,
+                    Title = "Software Engineer",
+                    YearsOfExperince = 1,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 2,
+                    Name = "Tony",
+                    Birthdate = new DateOnly(2000, 2, 3),
+                    City = "London",
+                    Country = "UK",
+                    Gender = "Male",
+                    GrossSalary = 9000,
+                    NetSalary = 7000,
+                    DepartmentId = 1,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 3,
+                    Name = "Sophia",
+                    Birthdate = new DateOnly(1998, 4, 10),
+                    City = "Bercalona",
+                    Country = "Spain",
+                    Gender = "Female",
+                    GrossSalary = 8000,
+                    NetSalary = 8000,
+                    DepartmentId = 2,
+                    Title = "Seals",
+                    YearsOfExperince = 4,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 4,
+                    Name = "Ahmed",
+                    Birthdate = new DateOnly(2002, 2, 3),
+                    City = "Cairo",
+                    Country = "Egypt",
+                    Gender = "Male",
+                    GrossSalary = 10000,
+                    NetSalary = 100,
+                    DepartmentId = 2,
+                    Title = "Web Developer",
+                    YearsOfExperince = 3,
+                    TaskId = 1
+                });
+            Employees.Add(
+                new Employee
+                {
+                    Id = 5,
+                    Name = "Amira",
+                    Birthdate = new DateOnly(2001, 1, 1),
+                    City = "Alexandria",
+                    Country = "Egypt",
+                    Gender = "Female",
+                    GrossSalary = 6000,
+                    NetSalary = 5500,
+                    DepartmentId = 1,
+                    Title = "Customer Server",
+                    YearsOfExperince = 1,
+                    TaskId = 2
+                });
+        }
+
         public void Add(Employee employee)
         {
             try
@@ -95,100 +179,18 @@ namespace FinalProject_HRsystem.Services
         {
             try
             {
-                Employees.RemoveRange(0, Employees.Count);
                 if (Employees.Count == 0)
                 {
                     throw new Exception("The Employee List is Empty");
                 }
+                else { Employees.RemoveRange(0, Employees.Count); }
             }
             catch (Exception ex)
             {
                 throw new Exception("somthing went wrong." + ex.Message);
             }
         }
-        public void Fill()
-        {
-            Employees.Add(
-                new Employee
-                {
-                    Id = 1,
-                    Name = "Abdelrhman",
-                    Birthdate = new DateOnly(2001, 8, 25),
-                    City = "Alexandria",
-                    Country = "Egypt",
-                    Gender = "Male",
-                    GrossSalary = 10000,
-                    NetSalary =9000,
-                    DepartmentId = 1,
-                    Title = "Software Engineer",
-                    YearsOfExperince = 1,
-                    TaskId = 1
-                });
-            Employees.Add(
-                new Employee
-                {
-                    Id = 2,
-                    Name = "Tony",
-                    Birthdate = new DateOnly(2000, 2, 3),
-                    City = "London",
-                    Country = "UK",
-                    Gender = "Male",
-                    GrossSalary = 9000,
-                    NetSalary = 7000,
-                    DepartmentId = 1,
-                    Title = "Web Developer",
-                    YearsOfExperince = 3,
-                    TaskId = 1
-                });
-            Employees.Add(
-                new Employee
-                {
-                    Id = 3,
-                    Name = "Sophia",
-                    Birthdate = new DateOnly(1998, 4, 10),
-                    City = "Bercalona",
-                    Country = "Spain",
-                    Gender = "Female",
-                    GrossSalary = 8000,
-                    NetSalary = 8000,
-                    DepartmentId = 2,
-                    Title = "Seals",
-                    YearsOfExperince = 4,
-                    TaskId = 1
-                });
-            Employees.Add(
-                new Employee
-                {
-                    Id = 4,
-                    Name = "Ahmed",
-                    Birthdate = new DateOnly(2002, 2, 3),
-                    City = "Cairo",
-                    Country = "Egypt",
-                    Gender = "Male",
-                    GrossSalary = 10000,
-                    NetSalary = 100,
-                    DepartmentId = 3,
-                    Title = "Web Developer",
-                    YearsOfExperince = 3,
-                    TaskId = 1
-                });
-            Employees.Add(
-                new Employee
-                {
-                    Id = 5,
-                    Name = "Amira",
-                    Birthdate = new DateOnly(2001, 1, 1),
-                    City = "Alexandria",
-                    Country = "Egypt",
-                    Gender = "Female",
-                    GrossSalary = 6000,
-                    NetSalary = 5500,
-                    DepartmentId = 4,
-                    Title = "Customer Server",
-                    YearsOfExperince = 1,
-                    TaskId = 2
-                });
-        }
+        
         public List<Employee> Sort(List<Employee> employees)
         {
             int[] arr = new int[employees.Count];

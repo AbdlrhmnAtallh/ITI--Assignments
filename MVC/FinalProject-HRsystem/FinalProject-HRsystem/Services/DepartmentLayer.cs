@@ -12,6 +12,38 @@ namespace FinalProject_HRsystem.Services
         public DepartmentLayer(IEmployeeLayer iemployeelayer)
         {
             this.iemployeelayer = iemployeelayer;
+                Departments.Add(
+                    new Department
+                    {
+                        Id = 1,
+                        Name = "Software",
+                        DepartmentHeadId = 1,
+                        Employees = new List<int> { 1, 2 }
+                    });
+                Departments.Add(
+                    new Department
+                    {
+                        Id = 2,
+                        Name = "Finance",
+                        DepartmentHeadId = 2,
+                        Employees = new List<int> { 2, 3 }
+                    });
+                Departments.Add(
+                    new Department
+                    {
+                        Id = 3,
+                        Name = "Seals",
+                        DepartmentHeadId = 1,
+                        Employees = new List<int> { 3, 4 }
+                    });
+                Departments.Add(
+                    new Department
+                    {
+                        Id = 1,
+                        Name = "Operations",
+                        DepartmentHeadId = 1,
+                        Employees = new List<int> { 4, 1 }
+                    });
         }
 
         public void Add(Department department)
@@ -80,40 +112,6 @@ namespace FinalProject_HRsystem.Services
             var department = Departments.FirstOrDefault(e => e.Id == id);
             return department;
         }
-        public void Fill()
-        {
-            Departments.Add(
-                new Department
-                {
-                    Id = 1,
-                    Name = "Software",
-                    DepartmentHeadId = 1,
-                    Employees = new List<int>{ 1, 2 }
-                }) ;
-            Departments.Add(
-                new Department
-                {
-                    Id = 2,
-                    Name = "Finance",
-                    DepartmentHeadId = 2,
-                    Employees = new List<int> { 2, 3 }
-                });
-            Departments.Add(
-                new Department
-                {
-                    Id = 3,
-                    Name = "Seals",
-                    DepartmentHeadId = 1,
-                    Employees = new List<int> { 3, 4 }
-                });
-            Departments.Add(
-                new Department
-                {
-                    Id = 1,
-                    Name = "Operations",
-                    DepartmentHeadId = 1,
-                    Employees = new List<int> { 4, 1 }
-                });
-        }
+        
     }
 }

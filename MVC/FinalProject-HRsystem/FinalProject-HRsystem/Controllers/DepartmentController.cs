@@ -92,12 +92,7 @@ namespace FinalProject_HRsystem.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        public IActionResult Fill()
-        {
-            ViewBag.Employees = iEmployeeLayer.All();
-            iDepartmentLayer.Fill();
-            return View("All", iDepartmentLayer.All());
-        }
+        
 
     }
 }

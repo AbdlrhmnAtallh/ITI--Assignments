@@ -82,19 +82,16 @@ namespace FinalProject_HRsystem.Controllers
             {
                 ModelState.AddModelError("", ex.Message);
             }
-            
+            ViewBag.Departments = idepartmentLayer.All();
             return View("All", iemployeelayer.All());
         }
         public IActionResult DeleteAll()
         {
             iemployeelayer.DeleteAll();
+            ViewBag.Departments = idepartmentLayer.All();
             return View("All", iemployeelayer.All());
         }
-        public IActionResult Fill()
-        {
-            iemployeelayer.Fill();
-            return View("All", iemployeelayer.All());
-        }
+        
         public IActionResult Sort()
         {
             return View("All",iemployeelayer.Sort(iemployeelayer.All()));
