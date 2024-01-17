@@ -94,6 +94,7 @@ namespace FinalProject_HRsystem.Controllers
         
         public IActionResult Sort()
         {
+            ViewBag.Departments = idepartmentLayer.All();
             return View("All",iemployeelayer.Sort(iemployeelayer.All()));
         }
     }

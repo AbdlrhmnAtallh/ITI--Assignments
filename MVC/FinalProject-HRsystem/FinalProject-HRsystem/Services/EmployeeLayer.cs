@@ -193,39 +193,8 @@ namespace FinalProject_HRsystem.Services
         
         public List<Employee> Sort(List<Employee> employees)
         {
-            int[] arr = new int[employees.Count];
-            for(int i =0;i<employees.Count;i++)
-            {
-                arr[i] = employees[i].GrossSalary;
-            }
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    if (arr[i] > arr[j])
-                    {
-                        var temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
-                }
-            }
-            List<Employee>employees1 = new List<Employee>();
-
-            for(int i = 0; i < employees.Count; i++)
-            {
-                for(int j = 0; j < employees.Count; j++)
-                {
-                    if (employees[i].GrossSalary <= arr[j])
-                    {
-                        employees1.Add(employees[i]);
-                        break;
-                    }
-                }
-            }
-
-
-            return employees1;
+            employees = employees.OrderBy(e=>e.Id).ToList();
+            return employees;
         }
     }
 }
