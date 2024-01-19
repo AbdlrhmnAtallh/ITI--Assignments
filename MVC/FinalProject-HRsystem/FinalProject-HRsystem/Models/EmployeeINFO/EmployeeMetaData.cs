@@ -3,6 +3,7 @@ using FinalProject_HRsystem.Models.DepartmentINFO;
 using FinalProject_HRsystem.Models.TaskINFO;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FinalProject_HRsystem.Common;
 
 namespace FinalProject_HRsystem.Models.EmployeeINFO
 {
@@ -28,6 +29,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public int Id { get; set; }
         [Required (ErrorMessage ="Name Is Required")]
         [StringLength(50 , ErrorMessage ="The Name Field Must Be a Maximum of 50 Characters")]
+        [NoNumbers]
         public string Name { get; set; }
         [Required(ErrorMessage ="Birth Date Is Required")]
        // [DataType(DataType.Date,ErrorMessage ="Invalid Date")]

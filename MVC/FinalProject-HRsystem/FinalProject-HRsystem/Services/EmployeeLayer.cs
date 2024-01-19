@@ -193,7 +193,22 @@ namespace FinalProject_HRsystem.Services
         
         public List<Employee> Sort(List<Employee> employees)
         {
-            employees = employees.OrderBy(e=>e.Id).ToList();
+            // employees = employees.OrderBy(e=>e.Id).ToList();
+
+            // Bubble Sort O(N^2)
+            for(int i = 0; i < employees.Count; i++)
+            {
+                for (int j = 0; j < employees.Count; j++)
+                {
+                    if (employees[i].Id < employees[j].Id)
+                    {
+                        var temp = employees[i];
+                        employees[i] = employees[j];
+                        employees[j] = temp;
+                    }
+                }
+            }
+
             return employees;
         }
     }
