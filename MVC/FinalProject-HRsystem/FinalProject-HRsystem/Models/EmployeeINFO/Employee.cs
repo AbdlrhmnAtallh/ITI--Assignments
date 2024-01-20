@@ -14,7 +14,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public string City { get; set; }
         public int GrossSalary { get; set; }
         public int NetSalary { get; set; }
-        public decimal YearsOfExperince { get;set; }
+        public int YearsOfExperince { get;set; }
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         public Department? Department { get; set; }

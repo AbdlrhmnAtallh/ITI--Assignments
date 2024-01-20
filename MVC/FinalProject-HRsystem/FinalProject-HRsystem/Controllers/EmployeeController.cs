@@ -28,6 +28,7 @@ namespace FinalProject_HRsystem.Controllers
                 try
                 {
                     iemployeelayer.Add(employee);
+                    ViewBag.Departments = idepartmentLayer.All();
                     return RedirectToAction("All", iemployeelayer.All());
                 }
                 catch (Exception ex)
@@ -36,6 +37,7 @@ namespace FinalProject_HRsystem.Controllers
                 }
                
             }
+            ViewBag.Departments = idepartmentLayer.All();
             return View(employee);
         }
         [HttpGet]
