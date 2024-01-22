@@ -36,6 +36,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         [Display(Name="Date Of Birth")]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         // Needs a custom vlaidation to check the age not older than 60 
+        [AgeLimit]
         public DateOnly Birthdate { get; set; }
         [Required (ErrorMessage ="Title Is Required")]
         [StringLength(50,ErrorMessage ="Max Length is 50 Characters")]
@@ -56,6 +57,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public int GrossSalary { get; set; }
         [Required(ErrorMessage ="This Field is Required")]
         [InValidValue(num = 99000)]
+        [IsGreaterThan(CompareProp = "GrossSalary")]
         public int NetSalary { get; set; }
         [Required(ErrorMessage ="Years Of Experince Field is Required")]
         [InValidValue(num =38)]
