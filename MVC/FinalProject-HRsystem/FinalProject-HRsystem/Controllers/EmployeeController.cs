@@ -63,6 +63,7 @@ namespace FinalProject_HRsystem.Controllers
                     ModelState.AddModelError("", ex.Message);
                 }
             }
+            ViewBag.Departments = idepartmentLayer.All();
             return View("Add",employee);
         }
         public IActionResult All()

@@ -24,6 +24,7 @@
                     <th>Gender</th>
                     <th><a asp-action="Sort">Gross Salary</a></th>
                     <th>Net Salary</th>
+                    <th>Phone Number</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -62,6 +63,7 @@
                         <td>@item.Gender</td>
                         <td>@item.GrossSalary</td>
                         <td>@item.NetSalary</td>
+                        <td>@item.PhoneNumber</td>
                         <td><a asp-action="Update" asp-route-id="@item.Id">Edit</a></td>
                         <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
                     </tr>

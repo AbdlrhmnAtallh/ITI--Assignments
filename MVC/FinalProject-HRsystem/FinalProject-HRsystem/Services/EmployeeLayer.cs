@@ -128,6 +128,7 @@ namespace FinalProject_HRsystem.Services
                     item.Title = employee.Title;
                     item.Image = employee.Image;
                     item.Gender = employee.Gender;
+                    item.PhoneNumber = employee.PhoneNumber;
                 }
             }
             catch(Exception ex)

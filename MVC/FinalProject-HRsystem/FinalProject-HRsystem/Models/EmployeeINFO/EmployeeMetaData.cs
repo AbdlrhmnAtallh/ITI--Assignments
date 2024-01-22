@@ -34,7 +34,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         [Required(ErrorMessage ="Birth Date Is Required")]
        // [DataType(DataType.Date,ErrorMessage ="Invalid Date")]
         [Display(Name="Date Of Birth")]
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+       // [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         // Needs a custom vlaidation to check the age not older than 60 
         [AgeLimit]
         public DateOnly Birthdate { get; set; }
