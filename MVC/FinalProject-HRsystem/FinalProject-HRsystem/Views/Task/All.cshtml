@@ -1,0 +1,35 @@
+﻿@model List<ProjectTask>
+
+<title>Tasks</title>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Leader</th>
+            <th>Employees</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Due At</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbodey>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.TaskLeader</td>
+                <td>@item.Employees</td>
+                <td>@item.Description</td>
+                <td>@item.CreatedAt</td>
+                <td>@item.DueDate</td>
+                <td>@item.Priority</td>
+                <td>@item.IsCompleted</td>
+            </tr>
+        }
+    </tbodey>
+</table>

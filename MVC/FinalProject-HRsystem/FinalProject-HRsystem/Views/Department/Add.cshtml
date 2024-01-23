@@ -35,28 +35,29 @@
     <form asp-action="@ViewData["Title"]">
         <div asp-validation-summary="All"></div>
 
-        <div>
-            <label asp-for="Id"></label>
-            <input asp-for="Id" />
-            <span asp-validation-for="Id"></span>
+        <div class="field">
+            <label asp-for="Id">
+            </label>
+            <input asp-for="Id" placeholder="Unique Value" />
+            <span asp-validation-for="Id" style="color:red"></span>
         </div>
 
-        <div>
+        <div class="field">
             <label asp-for="Name"></label>
-            <input asp-for="Name" />
-            <span asp-validation-for="Name"></span>
+            <input asp-for="Name" placeholder="Department Name" />
+            <span asp-validation-for="Name" style="color:red"></span>
         </div>
 
-        <div>
+        <div class="field">
             <label asp-for="DepartmentHeadId"></label>
             <select asp-for="DepartmentHeadId" asp-items="items" class="dropdown-item"></select>
-            <span asp-validation-for="DepartmentHeadId"></span>
+            <span asp-validation-for="DepartmentHeadId" style="color:red"></span>
         </div>
         
-        <div>
+        <div class="field">
             <label asp-for="Employees"></label>
             <select asp-for="Employees" asp-items="items" class="dropdown-item" ></select>
-            
+            <span asp-validation-for="Employees" style="color:red"></span>
         </div>
 
 

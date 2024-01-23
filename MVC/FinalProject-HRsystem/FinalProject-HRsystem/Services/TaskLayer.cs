@@ -4,9 +4,9 @@ namespace FinalProject_HRsystem.Services
 {
     public class TaskLayer
     {
-        public List<Taskk> Tasks= new List<Taskk>();
+        public List<Models.TaskINFO.ProjectTask> Tasks= new List<Models.TaskINFO.ProjectTask>();
 
-        public void Add(Taskk task)
+        public void Add(Models.TaskINFO.ProjectTask task)
         {
             try
             {
@@ -18,7 +18,7 @@ namespace FinalProject_HRsystem.Services
             }
          
         }
-        public void Update(Taskk task)
+        public void Update(Models.TaskINFO.ProjectTask task)
         {
             try
             {
@@ -41,15 +41,15 @@ namespace FinalProject_HRsystem.Services
                 throw new Exception("Can't Update Task.", ex);
             }
         }
-        public void Delete(Taskk task)
+        public void Delete(Models.TaskINFO.ProjectTask task)
         {
             Tasks.Remove(task);
         }
-        public List<Taskk> All()
+        public List<Models.TaskINFO.ProjectTask> All()
         {
             return Tasks.ToList();
         }
-        public Taskk GetOneTask(int id)
+        public Models.TaskINFO.ProjectTask GetOneTask(int id)
         {
             try
             {

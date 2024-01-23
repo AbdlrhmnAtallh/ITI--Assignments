@@ -66,7 +66,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public int DepartmentId { get; set; }
         public Department? Department { get; set; }
         public int TaskId { get; set; }
-        public Taskk? Tasks { get; set; }
+        public ProjectTask? Tasks { get; set; }
         public string? Image { get; set; }
     }
 }

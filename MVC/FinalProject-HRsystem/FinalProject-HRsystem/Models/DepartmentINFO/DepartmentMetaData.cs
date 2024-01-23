@@ -1,4 +1,5 @@
-﻿using FinalProject_HRsystem.Models.EmployeeINFO;
+﻿using FinalProject_HRsystem.Common;
+using FinalProject_HRsystem.Models.EmployeeINFO;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -14,10 +15,11 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
     public class DepartmentMetaData
     {
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
+        [NoNumbers]
         public string Name { get; set; }
         [Obsolete("Use the DepartmentHeadId property instead.")]
         public Employee? DepartmentHead { get; set; }

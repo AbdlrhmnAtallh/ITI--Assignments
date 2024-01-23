@@ -20,7 +20,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public Department? Department { get; set; }
         [ForeignKey("Task")]
         public int TaskId { get; set; }
-        public Taskk? Tasks { get; set; }
+        public ProjectTask? Task { get; set; }
         public string? Image { get; set; }
         public string? PhoneNumber { get; set; }
 

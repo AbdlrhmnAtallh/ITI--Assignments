@@ -1,10 +1,16 @@
 ﻿using FinalProject_HRsystem.Models.EmployeeINFO;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject_HRsystem.Models.TaskINFO
 {
-    public partial class Taskk
+    [ModelMetadataType(typeof(ProjectTaskMetaData))]
+    public partial class ProjectTask
+    {
+        // ..
+    }
+    public class ProjectTaskMetaData
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -22,15 +28,5 @@ namespace FinalProject_HRsystem.Models.TaskINFO
         public int Priority { get; set; }
 
         public List<Employee> Employees { get; set; }
-
-        // Additional properties can be added here
-
-        // Constructor
-        public Taskk()
-        {
-            CreatedAt = DateTime.Now;
-            IsCompleted = false;
-            Employees = new List<Employee>();
-        }
     }
 }
