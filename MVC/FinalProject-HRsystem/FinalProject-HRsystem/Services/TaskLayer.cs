@@ -2,11 +2,11 @@
 
 namespace FinalProject_HRsystem.Services
 {
-    public class TaskLayer
+    public class TaskLayer : ITaskLayer
     {
-        public List<Models.TaskINFO.ProjectTask> Tasks= new List<Models.TaskINFO.ProjectTask>();
+        public List<ProjectTask> Tasks = new List<ProjectTask>();
 
-        public void Add(Models.TaskINFO.ProjectTask task)
+        public void Add(ProjectTask task)
         {
             try
             {
@@ -14,11 +14,11 @@ namespace FinalProject_HRsystem.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Can't Add New Task ", ex);
+                throw new Exception("Can't Add a New Task ", ex);
             }
-         
+
         }
-        public void Update(Models.TaskINFO.ProjectTask task)
+        public void Edit(ProjectTask task)
         {
             try
             {
@@ -36,20 +36,32 @@ namespace FinalProject_HRsystem.Services
                 else
                     throw new Exception("Task Not Found.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("Can't Update Task.", ex);
             }
         }
-        public void Delete(Models.TaskINFO.ProjectTask task)
+        public void Delete(int id)
         {
-            Tasks.Remove(task);
+            var DeletedTask = Tasks.FirstOrDefault(t => t.Id == id);
+            try
+            {
+                Tasks.Remove(DeletedTask);
+                if (DeletedTask == null)
+                {
+                    throw new Exception("Task Not Foud");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Can't Add Task. ", ex);
+            }
         }
-        public List<Models.TaskINFO.ProjectTask> All()
+        public List<ProjectTask> All()
         {
             return Tasks.ToList();
         }
-        public Models.TaskINFO.ProjectTask GetOneTask(int id)
+        public ProjectTask GetOneTask(int id)
         {
             try
             {

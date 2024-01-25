@@ -1,6 +1,23 @@
 ﻿@model ProjectTask
+
 <link rel="stylesheet" href="~/css/AddForm.css">
-<form  asp-action="Add">
+@{
+    SelectList items;
+    if (Model == null)
+    {
+        ViewData["Title"] = "Add";
+        items = new(ViewBag.Employees, "Id", "Name");
+    }
+    else
+    {
+        ViewData["Title"] = "Edit";
+        items = new SelectList(ViewBag.Employees, "Id", "Name", "Select-Employees");
+    }
+    
+}
+<title>@ViewData["Title"]</title>
+<form  asp-action=@ViewData["Title"]>
+
     <div class="field">
         <label asp-for="Id"></label>
         <input asp-for="Id" placeholder="unique Value"/>
@@ -18,4 +35,41 @@
         <input asp-for="Description" placeholder="Enter description (max 500 characters)" />
         <span asp-validation-for="Description" style="color:red"></span>
     </div>
+
+    <div class="field">
+        <label asp-for="Employees"></label>
+        <select asp-for="Employees" asp-items="items"></select>
+        <span asp-validation-for="Employees" style="color:red"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="TaskLeader"></label>
+        <select asp-for="TaskLeader" asp-items="items"></select>
+        <span asp-validation-for="TaskLeader" style="color:red"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="CreatedAt"></label>
+        <input asp-for="CreatedAt" />
+        <span asp-validation-for="CreatedAt" style="color:red"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="DueDate"></label>
+        <input asp-for="DueDate" />
+        <span asp-validation-for="DueDate" style="color :red"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Priority"></label>
+        <input asp-for="Priority" />
+        <span asp-validation-for="Priority" style="color:red"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="IsCompleted"></label>
+        <input asp-for="IsCompleted" />
+        <span asp-validation-for="IsCompleted" style="color:red"></span>
+    </div>
+    <button type="submit"></button>
 </form>
