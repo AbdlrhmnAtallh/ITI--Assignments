@@ -2,16 +2,20 @@
 
 <link rel="stylesheet" href="~/css/AddForm.css">
 @{
-    SelectList items;
-    if (Model == null)
+    SelectList LeadersList;
+    SelectList EmployeesList;
+    int id = Model.Id;//bugs here
+    if (id !>=0)
     {
         ViewData["Title"] = "Add";
-        items = new(ViewBag.Employees, "Id", "Name");
+        EmployeesList = new(ViewBag.Employees, "Id", "Name");
+        LeadersList = new(ViewBag.Employees, "Id", "Name");
     }
     else
     {
         ViewData["Title"] = "Edit";
-        items = new SelectList(ViewBag.Employees, "Id", "Name", "Select-Employees");
+        EmployeesList = new SelectList(ViewBag.Employees, "Id", "Name",Model.Employees);
+        LeadersList = new SelectList(ViewBag.Employees, "Id", "Name",Model.TaskLeader);
     }
     
 }
@@ -38,13 +42,13 @@
 
     <div class="field">
         <label asp-for="Employees"></label>
-        <select asp-for="Employees" asp-items="items"></select>
+        <select asp-for="Employees" asp-items="EmployeesList"></select>
         <span asp-validation-for="Employees" style="color:red"></span>
     </div>
 
     <div class="field">
         <label asp-for="TaskLeader"></label>
-        <select asp-for="TaskLeader" asp-items="items"></select>
+        <select asp-for="TaskLeader" asp-items="LeadersList"></select>
         <span asp-validation-for="TaskLeader" style="color:red"></span>
     </div>
 

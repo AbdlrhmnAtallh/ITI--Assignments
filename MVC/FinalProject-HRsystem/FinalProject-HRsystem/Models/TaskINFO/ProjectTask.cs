@@ -34,6 +34,7 @@ namespace FinalProject_HRsystem.Models.TaskINFO
             CreatedAt = DateTime.Now;
             IsCompleted = false;
             Employees = new List<Employee>();
+            TaskLeader = new Employee();
         }
     }
 }

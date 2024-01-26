@@ -28,7 +28,8 @@ namespace FinalProject_HRsystem.Controllers
                 iTaskLayer.Add(task);
                 return View("All", iTaskLayer.All());
             }
-            return View("All",iTaskLayer.All());
+            ViewBag.Employees = iEmployeeLayer.All().ToList();
+            return View(task);
         }
 
         public IActionResult All()
