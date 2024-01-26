@@ -12,7 +12,7 @@ namespace FinalProject_HRsystem
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IEmployeeLayer, EmployeeLayer>();
             builder.Services.AddSingleton<IDepartmentLayer, DepartmentLayer>();
-
+            builder.Services.AddSingleton<ITaskLayer, TaskLayer>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

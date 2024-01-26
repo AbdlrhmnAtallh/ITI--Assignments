@@ -28,7 +28,7 @@ namespace FinalProject_HRsystem.Controllers
                 iTaskLayer.Add(task);
                 return View("All", iTaskLayer.All());
             }
-            return View(task);
+            return View("All",iTaskLayer.All());
         }
 
         public IActionResult All()
