@@ -10,11 +10,11 @@ namespace FinalProject_HRsystem.Common
             var task = validationContext.ObjectInstance as ProjectTask;
             DateTime Dueat = (DateTime)value;
             DateTime createdat = task.CreatedAt;
-            if (Dueat.Year < createdat.Year ||
-                Dueat.Month < createdat.Month ||
-                Dueat.Day < createdat.Day ||
-                Dueat.Hour < createdat.Hour ||
-                Dueat.Minute < createdat.Minute)
+            if (Dueat.Year > createdat.Year ||
+                Dueat.Month > createdat.Month ||
+                Dueat.Day > createdat.Day ||
+                Dueat.Hour > createdat.Hour ||
+                Dueat.Minute > createdat.Minute)
             {
                 return new ValidationResult("DeadLine Can't be before Creating time");
             }

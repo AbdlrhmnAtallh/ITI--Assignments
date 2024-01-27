@@ -4,8 +4,8 @@
 @{
     SelectList LeadersList;
     SelectList EmployeesList;
-    int id = Model.Id;//bugs here
-    if (id !>=0)
+    
+    if (Model==null||(Model!=null&&Model.Id==0))
     {
         ViewData["Title"] = "Add";
         EmployeesList = new(ViewBag.Employees, "Id", "Name");
@@ -77,3 +77,8 @@
     </div>
     <button type="submit">Add Task</button>
 </form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
