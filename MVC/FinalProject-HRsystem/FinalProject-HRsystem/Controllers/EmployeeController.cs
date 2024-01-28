@@ -72,7 +72,7 @@ namespace FinalProject_HRsystem.Controllers
             {
                 return View("EmptyList");
             }
-            ViewBag.Departments = idepartmentLayer.All();
+            ViewBag.Departments = idepartmentLayer.All().ToList();
             return View(iemployeelayer.All());
         }
         public IActionResult Delete(int id)

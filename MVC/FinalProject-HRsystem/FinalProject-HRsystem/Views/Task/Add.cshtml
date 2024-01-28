@@ -5,7 +5,7 @@
     SelectList LeadersList;
     SelectList EmployeesList;
     
-    if (Model==null||(Model!=null&&Model.Id==0))
+    if (Model==null|| ViewBag.Valid==false ||(Model!=null&&Model.Id==0))
     {
         ViewData["Title"] = "Add";
         EmployeesList = new(ViewBag.Employees, "Id", "Name");
@@ -14,8 +14,8 @@
     else
     {
         ViewData["Title"] = "Edit";
-        EmployeesList = new SelectList(ViewBag.Employees, "Id", "Name",Model.Employees);
-        LeadersList = new SelectList(ViewBag.Employees, "Id", "Name",Model.TaskLeader);
+        EmployeesList = new SelectList(ViewBag.Employees, "Id", "Name");// needs to show employees in edit mood
+        LeadersList = new SelectList(ViewBag.Employees, "Id", "Name",Model);
     }
     
 }
@@ -64,6 +64,10 @@
         <span asp-validation-for="DueDate" style="color :red"></span>
     </div>
 
+    <div class="field">
+        <label asp-for="Duration"></label>
+        <input asp-for="Duration" readonly placeholder="in dayes" />
+    </div>
     <div class="field">
         <label asp-for="Priority"></label>
         <input asp-for="Priority" />

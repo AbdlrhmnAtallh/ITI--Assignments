@@ -12,6 +12,7 @@ namespace FinalProject_HRsystem.Services
         public DepartmentLayer(IEmployeeLayer iemployeelayer)
         {
             this.iemployeelayer = iemployeelayer;
+
                 Departments.Add(
                     new Department
                     {

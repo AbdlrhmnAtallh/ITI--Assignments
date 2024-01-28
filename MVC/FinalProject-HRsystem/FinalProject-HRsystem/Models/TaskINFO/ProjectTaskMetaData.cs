@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using FinalProject_HRsystem.Common;
 
 namespace FinalProject_HRsystem.Models.TaskINFO
-{
+{   
     [ModelMetadataType(typeof(ProjectTaskMetaData))]
     public partial class ProjectTask
     {
@@ -33,13 +33,12 @@ namespace FinalProject_HRsystem.Models.TaskINFO
         [Display(Name="Task Status")]
         public bool IsCompleted { get; set; }
         [Required(ErrorMessage ="Task Priority is required")]
-        //[IsGreaterThan(CompareProp =6)]
-        //Less than atrribute
+        [NotGreaterOrLessThan(max =5,min =1 )]
         public int Priority { get; set; }
         [Required(ErrorMessage ="Task Leader feild is required")]
         [Display(Name="Task Leader")]
-        public Employee TaskLeader { get; set; }
+        public int TaskLeader { get; set; }
         [Required(ErrorMessage ="Employees works on Task feild is required")]
-        public List<Employee> Employees { get; set; }
+        public List<int> Employees { get; set; }
     }
 }

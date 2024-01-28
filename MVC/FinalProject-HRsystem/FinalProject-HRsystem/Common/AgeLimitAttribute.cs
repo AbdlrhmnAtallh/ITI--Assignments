@@ -6,10 +6,10 @@ namespace FinalProject_HRsystem.Common
     {
         protected override ValidationResult IsValid(object? value, ValidationContext validationContext)
         {
-            if (value == null) { return ValidationResult.Success; }
-
-            DateOnly EmployeeDOF =(DateOnly)value;
-            if (EmployeeDOF.AddYears(60)<DateOnly.FromDateTime(DateTime.Today))
+            if (value == null || !(value is DateTime employeeDOB)) { return ValidationResult.Success; }
+            
+            DateTime EmployeeDOF = (DateTime)value;
+             if(EmployeeDOF.AddYears(60)>DateTime.Today)
             {
                 return new ValidationResult("The" +
                     " date of birth provided indicates that the employee" +

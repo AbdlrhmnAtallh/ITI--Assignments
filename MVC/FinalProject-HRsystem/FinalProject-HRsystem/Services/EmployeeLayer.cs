@@ -12,7 +12,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     Id = 1,
                     Name = "Abdelrhman",
-                    Birthdate = new DateOnly(2001, 8, 25),
+                    Birthdate = new DateTime(2001, 8, 25),
                     City = "Alexandria",
                     Country = "Egypt",
                     Gender = "Male",
@@ -28,7 +28,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     Id = 2,
                     Name = "Tony",
-                    Birthdate = new DateOnly(2000, 2, 3),
+                    Birthdate = new DateTime(2000, 2, 3),
                     City = "London",
                     Country = "UK",
                     Gender = "Male",
@@ -44,7 +44,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     Id = 3,
                     Name = "Sophia",
-                    Birthdate = new DateOnly(1998, 4, 10),
+                    Birthdate = new DateTime(1998, 4, 10),
                     City = "Bercalona",
                     Country = "Spain",
                     Gender = "Female",
@@ -60,7 +60,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     Id = 4,
                     Name = "Ahmed",
-                    Birthdate = new DateOnly(2002, 2, 3),
+                    Birthdate = new DateTime(2002, 2, 3),
                     City = "Cairo",
                     Country = "Egypt",
                     Gender = "Male",
@@ -76,7 +76,7 @@ namespace FinalProject_HRsystem.Services
                 {
                     Id = 5,
                     Name = "Amira",
-                    Birthdate = new DateOnly(2001, 1, 1),
+                    Birthdate = new DateTime(2001, 1, 1),
                     City = "Alexandria",
                     Country = "Egypt",
                     Gender = "Female",

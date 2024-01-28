@@ -7,11 +7,12 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Leader</th>
             <th>Employees</th>
+            <th>Leader</th>
             <th>Description</th>
             <th>Created At</th>
             <th>Due At</th>
+            <th>Duration</th>
             <th>Priority</th>
             <th>Status</th>
         </tr>
@@ -20,13 +21,40 @@
         @foreach (var item in Model)
         {
             <tr>
+                @{
+                    string TaskLeader = "No Value";
+                    string[] EmployeeName = new string[item.Employees.Count];
+                    //List<Employee> EmployeesList = new List<Employee>();
+                    //EmployeesList = ViewBag.Employees.ToList();
+                    List<int> itemEmployees = item.Employees;
+                    for(int i =0; i < item.Employees.Count; i++)
+                    {
+                        
+                    }
+                }
                 <td>@item.Id</td>
                 <td>@item.Name</td>
-                <td>@item.TaskLeader</td>
-                <td>@item.Employees</td>
+                <td>
+                    @{
+                        foreach(var i in ViewBag.Employees)
+                        {
+                            foreach(var j in item.Employees)
+                            {
+                                if (i.Id == j)
+                                {
+                                    <text>@i.Name</text>
+                                    <text>, </text>
+                                }
+                            }
+                            if(item.TaskLeader==i.Id){ TaskLeader = i.Name; }
+                        }
+                    }
+                </td>
+                <td>@TaskLeader</td>
                 <td>@item.Description</td>
                 <td>@item.CreatedAt</td>
                 <td>@item.DueDate</td>
+                <td>@item.Duration days</td>
                 <td>@item.Priority</td>
                 <td>@item.IsCompleted</td>
             </tr>

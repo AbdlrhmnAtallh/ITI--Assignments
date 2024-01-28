@@ -7,7 +7,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateOnly Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
         public string Title { get; set; }
         public string Gender { get; set; }
         public string Country { get; set; }

@@ -23,17 +23,29 @@ namespace FinalProject_HRsystem.Controllers
         [HttpPost]
         public IActionResult Add(ProjectTask task)
         {
-            if (ModelState.IsValid)
+            try
             {
-                iTaskLayer.Add(task);
-                return View("All", iTaskLayer.All());
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Valid = true;
+                    iTaskLayer.Add(task);
+                    ViewBag.Employees = iEmployeeLayer.All().ToList();
+                    return View("All", iTaskLayer.All());
+                }
             }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            ViewBag.Valid = false;// till we got a conection with DB
             ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View(task);
+
         }
 
         public IActionResult All()
         {
+            ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View(iTaskLayer.All());
         }
     }

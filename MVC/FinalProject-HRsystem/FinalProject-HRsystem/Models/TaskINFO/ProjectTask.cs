@@ -1,4 +1,5 @@
 ﻿using FinalProject_HRsystem.Models.EmployeeINFO;
+using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,9 +23,9 @@ namespace FinalProject_HRsystem.Models.TaskINFO
 
         public int Priority { get; set; }
 
-        public List<Employee> Employees { get; set; }
-        public Employee TaskLeader { get; set; }
-
+        public List<int> Employees { get; set; }
+        public int TaskLeader { get; set; }
+        public int? Duration;
 
         // Additional properties can be added here
 
@@ -33,8 +34,13 @@ namespace FinalProject_HRsystem.Models.TaskINFO
         {
             CreatedAt = DateTime.Now;
             IsCompleted = false;
-            Employees = new List<Employee>();
-            TaskLeader = new Employee();
+           // Employees = new List<Employee>();
+            //TaskLeader = new Employee();
+            if (DueDate.HasValue)
+            {
+                Duration = (int)(DueDate.Value - CreatedAt).TotalDays;
+            }
+            else Duration = 0;
         }
     }
 }
