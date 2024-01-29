@@ -32,9 +32,11 @@ namespace FinalProject_HRsystem.Models.TaskINFO
         [Required(ErrorMessage="Task Status is Required")]
         [Display(Name="Task Status")]
         public bool IsCompleted { get; set; }
+
         [Required(ErrorMessage ="Task Priority is required")]
         [NotGreaterOrLessThan(max =5,min =1 )]
         public int Priority { get; set; }
+
         [Required(ErrorMessage ="Task Leader feild is required")]
         [Display(Name="Task Leader")]
         public int TaskLeader { get; set; }

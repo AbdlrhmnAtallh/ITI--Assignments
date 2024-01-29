@@ -30,7 +30,7 @@ namespace FinalProject_HRsystem.Controllers
                     ViewBag.Valid = true;
                     iTaskLayer.Add(task);
                     ViewBag.Employees = iEmployeeLayer.All().ToList();
-                    return View("All", iTaskLayer.All());
+                    return RedirectToAction("All", iTaskLayer.All());
                 }
             }
             catch (Exception ex)
@@ -40,13 +40,50 @@ namespace FinalProject_HRsystem.Controllers
             ViewBag.Valid = false;// till we got a conection with DB
             ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View(task);
-
         }
 
         public IActionResult All()
         {
             ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View(iTaskLayer.All());
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var task = iTaskLayer.GetOneTask(id);
+            ViewBag.Employees = iEmployeeLayer.All();
+            return View("Add",task);
+        }
+        [HttpPost]
+        public IActionResult Edit(ProjectTask task)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    iTaskLayer.Edit(task);
+                    return RedirectToAction("All", iTaskLayer.All());
+                }
+                catch(Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+            }
+            return View("Add",task);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                iTaskLayer.Delete(id);
+                return RedirectToAction("All", iTaskLayer.All());
+            }
+            catch(Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            return RedirectToAction("All", iTaskLayer.All());
         }
     }
 }

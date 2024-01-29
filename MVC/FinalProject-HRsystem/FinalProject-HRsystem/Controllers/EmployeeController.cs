@@ -8,10 +8,12 @@ namespace FinalProject_HRsystem.Controllers
     {
         IEmployeeLayer iemployeelayer;
         IDepartmentLayer idepartmentLayer;
-       public EmployeeController(IEmployeeLayer _iemployeelayer, IDepartmentLayer idepartmentLayer)
+        ITaskLayer itaskLayer;
+       public EmployeeController(IEmployeeLayer _iemployeelayer, IDepartmentLayer idepartmentLayer,ITaskLayer _iTaskLayer)
         {
             iemployeelayer = _iemployeelayer;
             this.idepartmentLayer = idepartmentLayer;
+            itaskLayer = _iTaskLayer;
         }
 
         [HttpGet]
@@ -56,7 +58,7 @@ namespace FinalProject_HRsystem.Controllers
                 {
                     iemployeelayer.Update(employee);
                     ViewBag.Departments = idepartmentLayer.All();
-                    return View("All", iemployeelayer.All());
+                    return RedirectToAction("All", iemployeelayer.All());
                 }
                 catch(Exception ex)
                 {
@@ -72,6 +74,7 @@ namespace FinalProject_HRsystem.Controllers
             {
                 return View("EmptyList");
             }
+            ViewBag.Tasks = itaskLayer.All();
             ViewBag.Departments = idepartmentLayer.All().ToList();
             return View(iemployeelayer.All());
         }
@@ -86,19 +89,19 @@ namespace FinalProject_HRsystem.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
             ViewBag.Departments = idepartmentLayer.All();
-            return View("All", iemployeelayer.All());
+            return RedirectToAction("All", iemployeelayer.All());
         }
         public IActionResult DeleteAll()
         {
             iemployeelayer.DeleteAll();
             ViewBag.Departments = idepartmentLayer.All();
-            return View("All", iemployeelayer.All());
+            return RedirectToAction("All", iemployeelayer.All());
         }
         
         public IActionResult Sort()
         {
             ViewBag.Departments = idepartmentLayer.All();
-            return View("All",iemployeelayer.Sort(iemployeelayer.All()));
+            return RedirectToAction("All",iemployeelayer.Sort(iemployeelayer.All()));
         }
     }
 }

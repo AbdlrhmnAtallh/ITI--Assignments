@@ -17,10 +17,12 @@
             <th>Status</th>
         </tr>
     </thead>
-    <tbodey>
+    <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            string color = "success";
+            if (item.IsCompleted) { color = "danger"; }
+            <tr class="@color">
                 @{
                     string TaskLeader = "No Value";
                     string[] EmployeeName = new string[item.Employees.Count];
@@ -51,13 +53,56 @@
                     }
                 </td>
                 <td>@TaskLeader</td>
-                <td>@item.Description</td>
+                <td>
+                    @{
+                        int counter = 0;
+                        foreach(var i in item.Description)
+                        {
+                            <text>i</text>
+                            counter++;
+                            if (counter >= 15)
+                            {
+                                <text>...</text>
+                                break;
+                            }
+                        }
+                    }
+                </td>
                 <td>@item.CreatedAt</td>
                 <td>@item.DueDate</td>
-                <td>@item.Duration days</td>
-                <td>@item.Priority</td>
-                <td>@item.IsCompleted</td>
+                <td>
+                    @{
+                        item.Duration = (int)(item.DueDate.Value - item.CreatedAt).TotalDays;
+                    }
+                    <text>@item.Duration Dayes</text>
+                </td>
+                @switch (item.Priority)
+                {
+                    case 1:
+                        <td style="color:red">Critical</td>
+                        break;
+                    case 2:
+                        <td style="color:aqua">High</td>
+                        break;
+                    case 3:
+                        <td style="color:greenyellow">Medium</td>
+                        break;
+                    case 4:
+                        <td style="color:green">Low</td>
+                        break;
+                    case 5:
+                        <td>Optional</td>
+                        break;
+                }
+                @if (item.IsCompleted)
+                {
+                    <td style="color:greenyellow">Completed</td>
+                }
+                else{<td style="color:red">Not Completed</td>}
+                <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+           
             </tr>
         }
-    </tbodey>
+    </tbody>
 </table>

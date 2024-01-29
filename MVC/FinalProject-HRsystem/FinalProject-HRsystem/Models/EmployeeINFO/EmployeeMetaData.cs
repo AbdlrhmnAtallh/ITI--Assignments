@@ -39,7 +39,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         //[DataType(DataType.Date,ErrorMessage ="Invalid Date")]
         [Display(Name="Date Of Birth")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [AgeLimit]
+       // [AgeLimit] bugs here 
         public DateTime Birthdate { get; set; }
 
 

@@ -43,7 +43,7 @@ namespace FinalProject_HRsystem.Controllers
             if(department == null)
             {
                 // needs Notifiation 
-                return View("All", iDepartmentLayer.All());
+                return RedirectToAction("All", iDepartmentLayer.All());
             }
             return View("Add",department);
         }
@@ -83,13 +83,13 @@ namespace FinalProject_HRsystem.Controllers
             try
             {
                 iDepartmentLayer.Remove(id);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("All",iDepartmentLayer.All());
             }
             catch (Exception ex)
             {
                 // needs to display in notification
                 ModelState.AddModelError("", ex.Message);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("All",iDepartmentLayer.All());
             }
         }
         
