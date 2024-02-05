@@ -9,5 +9,6 @@ namespace FinalProject_HRsystem.Services
         void Delete(int id);
         void Edit(ProjectTask task);
         ProjectTask GetOneTask(int id);
+        public void DeleteAll();
     }
 }

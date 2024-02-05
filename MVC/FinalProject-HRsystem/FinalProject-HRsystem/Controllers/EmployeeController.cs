@@ -91,6 +91,7 @@ namespace FinalProject_HRsystem.Controllers
             ViewBag.Departments = idepartmentLayer.All();
             return RedirectToAction("All", iemployeelayer.All());
         }
+        [HttpGet]
         public IActionResult DeleteAll()
         {
             iemployeelayer.DeleteAll();

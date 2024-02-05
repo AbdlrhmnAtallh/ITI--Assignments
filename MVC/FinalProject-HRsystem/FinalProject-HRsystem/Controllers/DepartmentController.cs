@@ -60,9 +60,9 @@ namespace FinalProject_HRsystem.Controllers
                 catch(Exception ex)
                 {
                     ModelState.AddModelError("",ex.Message);
-                    return View(department);
                 }
             }
+            ViewBag.Employees = iEmployeeLayer.All().ToList();
             return View("Add",department);
         }
         public IActionResult All()
@@ -91,6 +91,12 @@ namespace FinalProject_HRsystem.Controllers
                 ModelState.AddModelError("", ex.Message);
                 return RedirectToAction("All",iDepartmentLayer.All());
             }
+        }
+        [HttpGet]
+        public IActionResult DeleteAll()
+        {
+            iDepartmentLayer.DeleteAll();
+            return RedirectToAction("All", iDepartmentLayer.All());
         }
         
 

@@ -113,6 +113,24 @@ namespace FinalProject_HRsystem.Services
             var department = Departments.FirstOrDefault(e => e.Id == id);
             return department;
         }
+        public void DeleteAll()
+        {
+            try
+            {
+                if (Departments.Count < 1)
+                {
+                    throw new Exception("No Departments yet");
+                }
+                else
+                {
+                    Departments.RemoveRange(0, Departments.Count);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong" + ex.Message);
+            }
+        }
         
     }
 }

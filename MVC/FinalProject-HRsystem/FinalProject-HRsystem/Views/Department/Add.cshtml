@@ -28,12 +28,11 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
     <link rel="stylesheet" href="~/css/AddForm.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
 </head>
 <body>
    
     <form asp-action="@ViewData["Title"]">
-        <div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All" style="color:red"></div>
 
         <div class="field">
             <label asp-for="Id">
@@ -59,11 +58,6 @@
             <select asp-for="Employees" asp-items="items" class="dropdown-item" ></select>
             <span asp-validation-for="Employees" style="color:red"></span>
         </div>
-
-
-
-
-
 
         <button type="submit" >Add Department</button>
 

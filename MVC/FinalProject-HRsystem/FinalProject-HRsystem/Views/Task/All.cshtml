@@ -2,6 +2,35 @@
 
 <title>Tasks</title>
 
+@{
+    if (Model != null)
+    {
+        <div class="DleteAll">
+        <a asp-action="DelteAll" >Dlete All</a>
+        </div>
+    }
+}
+<style>
+    .hover-description {
+        position: relative;
+    }
+
+        .hover-description .description-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 9999;
+        }
+
+        .hover-description:hover .description-content {
+            display: block;
+        }
+</style>
+
 <table class="table">
     <thead>
         <tr>
@@ -53,7 +82,7 @@
                     }
                 </td>
                 <td>@TaskLeader</td>
-                <td>
+                <td class="hover-description">
                     @{
                         int counter = 0;
                         foreach(var i in item.Description)
@@ -67,6 +96,15 @@
                             }
                         }
                     }
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const hoverDescription = document.querySelector(".hover-description");
+                            const descriptionContent = document.createElement("div");
+                            descriptionContent.classList.add("description-content");
+                            descriptionContent.innerText = "@item.Description";
+                            hoverDescription.appendChild(descriptionContent);
+                        });
+                    </script>
                 </td>
                 <td>@item.CreatedAt</td>
                 <td>@item.DueDate</td>
@@ -106,3 +144,4 @@
         }
     </tbody>
 </table>
+

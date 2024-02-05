@@ -25,7 +25,6 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
     {
        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required(ErrorMessage ="Id Is Required")]
         public int Id { get; set; }
 
 

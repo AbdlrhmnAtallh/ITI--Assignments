@@ -7,7 +7,14 @@
     <div >
         <h2>All Employees</h2>
     </div>
-
+@{
+    if (Model != null)
+    {
+        <div class="DeleteAll">
+            <a asp-action="DeleteAll" class="btn btn-danger">Delete All</a>
+        </div>
+    }
+}
    
         <table class="table">
             <thead>
@@ -79,7 +86,5 @@
                 }
             </tbody>
         </table>
-    </div>
-            
- </div>
+
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -78,6 +78,24 @@ namespace FinalProject_HRsystem.Services
                 throw new Exception("Error Csn't Read Task .", ex);
             }
         }
+        public void DeleteAll()
+        {
+            try
+            {
+                if (Tasks.Count < 1)
+                {
+                    throw new Exception("No Tasks Yet");
+                }
+                else
+                {
+                    Tasks.RemoveRange(0, Tasks.Count);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Somthing went wrong " + ex.Message);
+            }
+        }
 
     }
 }

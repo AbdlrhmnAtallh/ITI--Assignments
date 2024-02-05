@@ -1,5 +1,16 @@
 ﻿@model List<Department>
 
+<title>All Departments</title>
+
+@{
+    if (Model.Count!=0)
+    {
+        <div class="DeleteAll">
+            <a asp-action="DeleteAll" class="btn btn-danger" style="border-radius7%" >Delete All</a>
+        </div>
+    }
+}
+
 <h4>All Departments</h4>
 <table class="table">
     <thead>
