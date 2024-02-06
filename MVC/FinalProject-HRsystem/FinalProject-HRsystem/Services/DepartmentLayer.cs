@@ -128,7 +128,7 @@ namespace FinalProject_HRsystem.Services
             }
             catch(Exception ex)
             {
-                throw new Exception("Somthing went wrong" + ex.Message);
+                throw new Exception("Somthing went wrong. " + ex.Message);
             }
         }
         

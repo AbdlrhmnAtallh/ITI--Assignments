@@ -104,5 +104,25 @@ namespace FinalProject_HRsystem.Controllers
             ViewBag.Departments = idepartmentLayer.All();
             return RedirectToAction("All",iemployeelayer.Sort(iemployeelayer.All()));
         }
+
+        public IActionResult NameExists(string name,int id )
+        {
+            var employee =
+                iemployeelayer.All().FirstOrDefault(e => e.Name == name);
+            if (employee == null) { return Json(true); }
+            if (employee != null && employee.Id == id)
+            {
+                return Json(true);
+            }
+            //var NewEmployeeRecord =
+            //    iemployeelayer.All().FirstOrDefault(e => e.Id == id);
+            //if (NewEmployeeRecord == null) // new Record With valid name
+            //{
+            //    return Json(true);
+            //}
+            return Json(false);
+                
+            
+        }
     }
 }

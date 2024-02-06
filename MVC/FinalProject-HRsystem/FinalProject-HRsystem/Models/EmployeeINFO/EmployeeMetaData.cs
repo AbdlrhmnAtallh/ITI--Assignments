@@ -31,6 +31,7 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         [Required (ErrorMessage ="Name Is Required")]
         [StringLength(50 , ErrorMessage ="The Name Field Must Be a Maximum of 50 Characters")]
         [NoNumbers]
+        [Remote("NameExists","Employee", AdditionalFields="Id", ErrorMessage ="Name Exaists")]
         public string Name { get; set; }
 
 
