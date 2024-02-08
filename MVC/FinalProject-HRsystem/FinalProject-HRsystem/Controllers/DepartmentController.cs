@@ -98,7 +98,23 @@ namespace FinalProject_HRsystem.Controllers
             iDepartmentLayer.DeleteAll();
             return RedirectToAction("All", iDepartmentLayer.All());
         }
-        
+
+        public IActionResult NameExists(string name, int id)
+        {
+            var department = iDepartmentLayer.All().FirstOrDefault(d => d.Name == name);
+
+            if (department == null)
+            {
+                return Json(true);
+            }
+
+            if (department != null && department.Id == id)
+            {
+                return Json(true);
+            }
+
+            return Json(false);
+        }
 
     }
 }

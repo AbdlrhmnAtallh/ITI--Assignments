@@ -20,6 +20,7 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
         [Required]
         [MaxLength(50)]
         [NoNumbers]
+        [Remote ("NameExists","Department",AdditionalFields ="Id",ErrorMessage ="This Department is already exists")]
         public string Name { get; set; }
         [Obsolete("Use the DepartmentHeadId property instead.")]
         public Employee? DepartmentHead { get; set; }

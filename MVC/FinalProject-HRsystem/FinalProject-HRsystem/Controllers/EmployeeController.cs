@@ -101,6 +101,12 @@ namespace FinalProject_HRsystem.Controllers
         
         public IActionResult Sort()
         {
+            var dec = false;
+            if (dec)
+            {
+                ViewBag.Departments = idepartmentLayer.All();
+                return View("All",iemployeelayer.All().)
+            }
             ViewBag.Departments = idepartmentLayer.All();
             return RedirectToAction("All",iemployeelayer.Sort(iemployeelayer.All()));
         }
@@ -114,15 +120,13 @@ namespace FinalProject_HRsystem.Controllers
             {
                 return Json(true);
             }
-            //var NewEmployeeRecord =
-            //    iemployeelayer.All().FirstOrDefault(e => e.Id == id);
-            //if (NewEmployeeRecord == null) // new Record With valid name
-            //{
-            //    return Json(true);
-            //}
             return Json(false);
-                
-            
         }
+        public IActionResult ShowEmployeeInCard()
+        {
+            ViewBag.ShowInCard = true;
+            return View("All", iemployeelayer.All());
+        }
+        
     }
 }

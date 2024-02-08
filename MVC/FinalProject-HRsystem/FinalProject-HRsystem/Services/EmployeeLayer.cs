@@ -21,7 +21,8 @@ namespace FinalProject_HRsystem.Services
                     DepartmentId = 1,
                     Title = "Software Engineer",
                     YearsOfExperince = 1,
-                    TaskId = 1
+                    TaskId = 1,
+                    PhoneNumber = "123456789"
                 });
             Employees.Add(
                 new Employee
@@ -37,7 +38,8 @@ namespace FinalProject_HRsystem.Services
                     DepartmentId = 1,
                     Title = "Web Developer",
                     YearsOfExperince = 3,
-                    TaskId = 1
+                    TaskId = 1,
+                    PhoneNumber = "123456789"
                 });
             Employees.Add(
                 new Employee
@@ -53,7 +55,8 @@ namespace FinalProject_HRsystem.Services
                     DepartmentId = 2,
                     Title = "Seals",
                     YearsOfExperince = 4,
-                    TaskId = 1
+                    TaskId = 2,
+                    PhoneNumber = "123456789"
                 });
             Employees.Add(
                 new Employee
@@ -69,7 +72,8 @@ namespace FinalProject_HRsystem.Services
                     DepartmentId = 2,
                     Title = "Web Developer",
                     YearsOfExperince = 3,
-                    TaskId = 1
+                    TaskId = 2,
+                    PhoneNumber = "123456789"
                 });
             Employees.Add(
                 new Employee
@@ -85,7 +89,8 @@ namespace FinalProject_HRsystem.Services
                     DepartmentId = 1,
                     Title = "Customer Server",
                     YearsOfExperince = 1,
-                    TaskId = 2
+                    TaskId = 3,
+                    PhoneNumber = "123456789"
                 });
         }
 
@@ -197,19 +202,24 @@ namespace FinalProject_HRsystem.Services
             // employees = employees.OrderBy(e=>e.Id).ToList();
 
             // Bubble Sort O(N^2)
+            bool dec = false;
             for(int i = 0; i < employees.Count; i++)
             {
                 for (int j = 0; j < employees.Count; j++)
                 {
-                    if (employees[i].Id < employees[j].Id)
+                    if (dec)
                     {
-                        var temp = employees[i];
-                        employees[i] = employees[j];
-                        employees[j] = temp;
+                        if (employees[i].Id > employees[j].Id)
+                        {
+                            var temp = employees[i];
+                            employees[i] = employees[j];
+                            employees[j] = temp;
+                        }
                     }
                 }
             }
-
+            if (dec == true) { dec = false; }
+            else { dec = true; }
             return employees;
         }
     }

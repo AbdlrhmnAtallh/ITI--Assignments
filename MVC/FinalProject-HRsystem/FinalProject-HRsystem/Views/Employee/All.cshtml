@@ -11,13 +11,21 @@
     if (Model.Count !=0)
     {
         <div class="DeleteAll">
-            <a asp-action="DeleteAll" class="btn btn-danger">Delete All</a>
+            <a asp-action="DeleteAll" class="btn btn-pill">Delete All</a>
         </div>
     }
+    else
+    {
+        <a asp-action="Add" class="btn btn-pill">Add Employee</a>
+    }
 }
-   
-        <table class="table">
-            <thead>
+
+@{
+    if (ViewBag.ShowInCard != true)
+    {
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th></th>
                     <th>No</th>
@@ -38,14 +46,14 @@
             </thead>
             <tbody>
                 @{
-                    string[] arr = { "success", "danger", "info", "warning", "active" };
+                    string[] arr = { "table-success", "table-danger", "table-info", "table-warning", "table-active" };
                     int counter = -1;
                 }
                 @foreach (var item in Model)
                 {
-                    if(counter ==4){ counter = -1; }
+                    if (counter == 4) { counter = -1; }
                     counter++;
-                    <tr class="@arr[counter]" >
+                    <tr class="@arr[counter]">
                         <td>
                             <input type="checkbox" />
                         </td>
@@ -53,27 +61,27 @@
                         <td>@item.Name</td>
                         <td>@item.Title</td>
                         <td>
-                    @foreach (var i in ViewBag.Departments)
-                    {
-                        if (i.Id == item.Id)
-                        {
-                            <text>@i.Name</text>
-                            break;
-                        }
-                    }
+                            @foreach (var i in ViewBag.Departments)
+                            {
+                                if (i.Id == item.Id)
+                                {
+                                    <text>@i.Name</text>
+                                    break;
+                                }
+                            }
                         </td>
                         <td>
-                    @foreach (var i in ViewBag.Tasks)
-                    {
-                        if (i.Id == item.TaskId)
-                        {
-                            <text>@i.Name</text>
-                        }
-                    }
+                            @foreach (var i in ViewBag.Tasks)
+                            {
+                                if (i.Id == item.TaskId)
+                                {
+                                    <text>@i.Name</text>
+                                }
+                            }
                         </td>
 
-               
-                <td>@item.Birthdate.ToString("dd/MM/yyyy")</td>
+
+                        <td>@item.Birthdate.ToString("dd/MM/yyyy")</td>
                         <td>@item.YearsOfExperince</td>
                         <td>@item.Country, @item.City</td>
                         <td>@item.Gender</td>
@@ -87,4 +95,13 @@
             </tbody>
         </table>
 
+    }
+    else
+    {
+        foreach(var item in Model)
+        {
+            <partial name="_GetAnEmployeeInCard" model="item"/>
+        }
+    }
+}
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

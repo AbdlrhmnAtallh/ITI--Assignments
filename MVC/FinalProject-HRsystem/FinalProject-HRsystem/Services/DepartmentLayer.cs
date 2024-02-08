@@ -40,7 +40,7 @@ namespace FinalProject_HRsystem.Services
                 Departments.Add(
                     new Department
                     {
-                        Id = 1,
+                        Id = 4,
                         Name = "Operations",
                         DepartmentHeadId = 1,
                         Employees = new List<int> { 4, 1 }
