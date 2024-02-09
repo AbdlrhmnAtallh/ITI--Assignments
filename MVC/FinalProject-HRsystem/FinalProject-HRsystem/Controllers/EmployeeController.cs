@@ -101,14 +101,20 @@ namespace FinalProject_HRsystem.Controllers
         
         public IActionResult Sort()
         {
-            var dec = false;
-            if (dec)
-            {
-                ViewBag.Departments = idepartmentLayer.All();
-                return View("All",iemployeelayer.All().)
-            }
+           
             ViewBag.Departments = idepartmentLayer.All();
-            return RedirectToAction("All",iemployeelayer.Sort(iemployeelayer.All()));
+            ViewBag.Sorted = true;
+            if (ViewBag.Sorted == false)
+            {
+                ViewBag.Sorted = true;
+                return RedirectToAction("All", iemployeelayer.Sort(iemployeelayer.All()));
+            }
+            else
+            {
+                ViewBag.Sorted = false;
+                return RedirectToAction("All", iemployeelayer.SortBydec(iemployeelayer.All()));
+            }
+                
         }
 
         public IActionResult NameExists(string name,int id )

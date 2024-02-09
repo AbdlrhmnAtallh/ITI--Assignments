@@ -1,7 +1,7 @@
 ﻿
 @model Employee
 @{
-    if (Model != null)
+    if (Model != null && Model.Id!=0) // it would work when it connect with db
     {
         ViewData["Title"] = "Update";
     }
