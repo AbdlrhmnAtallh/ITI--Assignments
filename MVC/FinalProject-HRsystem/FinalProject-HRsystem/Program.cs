@@ -9,6 +9,7 @@ namespace FinalProject_HRsystem
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IEmployeeLayer, EmployeeLayer>();
             builder.Services.AddSingleton<IDepartmentLayer, DepartmentLayer>();

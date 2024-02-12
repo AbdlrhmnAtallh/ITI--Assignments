@@ -101,7 +101,6 @@ namespace FinalProject_HRsystem.Controllers
         
         public IActionResult Sort()
         {
-           
             ViewBag.Departments = idepartmentLayer.All();
             ViewBag.Sorted = true;
             if (ViewBag.Sorted == false)
@@ -113,8 +112,7 @@ namespace FinalProject_HRsystem.Controllers
             {
                 ViewBag.Sorted = false;
                 return RedirectToAction("All", iemployeelayer.SortBydec(iemployeelayer.All()));
-            }
-                
+            }       
         }
 
         public IActionResult NameExists(string name,int id )
@@ -133,6 +131,5 @@ namespace FinalProject_HRsystem.Controllers
             ViewBag.ShowInCard = true;
             return View("All", iemployeelayer.All());
         }
-        
     }
 }
