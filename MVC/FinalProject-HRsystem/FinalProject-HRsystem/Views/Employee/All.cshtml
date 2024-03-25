@@ -28,6 +28,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th></th>
+                    <th></th>
                     <th>No</th>
                     <th>Name</th>
                     <th>Job Title</th>
@@ -57,13 +58,15 @@
                         <td>
                             <input type="checkbox" />
                         </td>
+                        <td><img src="~/Pictures/Default.png"
+                        style="height:50px;width:50px;border-radius:20%"/></td>
                         <td>@item.Id</td>
                         <td>@item.Name</td>
                         <td>@item.Title</td>
                         <td>
                             @foreach (var i in ViewBag.Departments)
                             {
-                                if (i.Id == item.Id)
+                                if (i.Id == item.DepartmentId)
                                 {
                                     <text>@i.Name</text>
                                     break;

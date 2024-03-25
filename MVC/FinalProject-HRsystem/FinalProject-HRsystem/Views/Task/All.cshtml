@@ -1,5 +1,5 @@
 ﻿@model List<ProjectTask>
-
+@using System.Text
 <title>Tasks</title>
 
 @{
@@ -71,9 +71,13 @@
                         {
                             foreach(var j in item.Employees)
                             {
+                                @{
+                                    StringBuilder sb =new StringBuilder;}
                                 if (i.Id == j)
                                 {
+                                    @sb.Append)
                                     <text>@i.Name</text>
+
                                     <text>, </text>
                                 }
                             }
@@ -87,7 +91,7 @@
                         int counter = 0;
                         foreach(var i in item.Description)
                         {
-                            <text>i</text>
+                            <text>@i</text>
                             counter++;
                             if (counter >= 15)
                             {

@@ -15,7 +15,7 @@ namespace FinalProject_HRsystem.Models.DepartmentINFO
     public class DepartmentMetaData
     {
         [Required]
-       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]

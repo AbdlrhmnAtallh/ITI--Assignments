@@ -15,14 +15,17 @@ namespace FinalProject_HRsystem.Models.EmployeeINFO
         public int GrossSalary { get; set; }
         public int NetSalary { get; set; }
         public int YearsOfExperince { get;set; }
-        [ForeignKey("Department")]
+        //[ForeignKey("Department")]
         public int DepartmentId { get; set; }
-        public Department? Department { get; set; }
-        [ForeignKey("Task")]
+        //public Department? Department { get; set; }
+        //[ForeignKey("Task")]
         public int TaskId { get; set; }
-        public ProjectTask? Task { get; set; }
+        //public ProjectTask? Task { get; set; }
         public string? Image { get; set; }
         public string? PhoneNumber { get; set; }
 
+        public int? Bouns { get; set; }
+        public int? Deductions { get; set; }
+        public int? TotalSalary { get; set; } // = Netsalary+bouns-Deductions
     }
 }

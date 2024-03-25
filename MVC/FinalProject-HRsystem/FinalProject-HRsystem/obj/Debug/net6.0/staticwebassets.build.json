@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oiJa0b+XE8iTTzZLQ1jh4LXObrPhqtclJHc+nGvDSWU=",
+  "Hash": "LbE5IM9RWXUcrlhBJahrR/ktPGFqz42+1vEVXejWepk=",
   "Source": "FinalProject-HRsystem",
   "BasePath": "_content/FinalProject-HRsystem",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\wwwroot\\Pictures\\Default.png",
+      "SourceId": "FinalProject-HRsystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\ITI\\MVC\\FinalProject-HRsystem\\FinalProject-HRsystem\\wwwroot\\",
+      "BasePath": "_content/FinalProject-HRsystem",
+      "RelativePath": "Pictures/Default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pictures\\Default.png"
     }
   ]
 }

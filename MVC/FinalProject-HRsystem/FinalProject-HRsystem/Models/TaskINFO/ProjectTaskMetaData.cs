@@ -13,7 +13,7 @@ namespace FinalProject_HRsystem.Models.TaskINFO
     }
     public class ProjectTaskMetaData
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [MaxLength(50)]
         [NoNumbers]
