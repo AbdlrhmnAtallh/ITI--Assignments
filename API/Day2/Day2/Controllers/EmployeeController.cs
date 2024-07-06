@@ -1,7 +1,8 @@
 ﻿using Day2.Models;
+using Day2.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Entity
+using Microsoft.EntityFrameworkCore;
 namespace Day2.Controllers
 {
     [Route("api/[controller]")]
@@ -11,7 +12,12 @@ namespace Day2.Controllers
         [HttpGet]
         public IActionResult GetAllEmployees()
         {
-          //  List<Employee> empwithdept = Day2Entity.Employees.Join(e=>e.De)
+            // Employee e = Day2Entity.Employees.Include(e=>e.Department)
+            //                .FirstOrDefualt(e=>e.Id==id)
+
+            EmployeeDataWithDepartmentName EmployeeDatawithdptname = new EmployeeDataWithDepartmentName();
+            // EmployeeDatawithdptname.studName = e.Name;
+            // EmployeeDatawithdptname.deptName = e.Department;
             return Ok(Day2Entity.Employees.ToList());
         }
     }

@@ -30,3 +30,6 @@ F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\obj\Debug\net6.0\refint\Day2.dll
 F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\obj\Debug\net6.0\Day2.pdb
 F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\obj\Debug\net6.0\Day2.genruntimeconfig.cache
 F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\obj\Debug\net6.0\ref\Day2.dll
+F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Work_Space\ASP.Net_Core\ITI\API\Day2\Day2\bin\Debug\net6.0\Day2.staticwebassets.runtime.json

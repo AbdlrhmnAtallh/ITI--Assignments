@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "eUTyw+8RytGJDKQbqOJL1w9RT+rbnkzTK4fHaJ7ejp8=",
+  "Hash": "QeAWTchjKLi5ncR1/OVOjWTOr83/FaZGxSqijFSJnHw=",
   "Source": "Day2",
   "BasePath": "_content/Day2",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Day2\\wwwroot",
+      "Source": "Day2",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\ITI\\API\\Day2\\Day2\\wwwroot\\",
+      "BasePath": "_content/Day2",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\Work_Space\\ASP.Net_Core\\ITI\\API\\Day2\\Day2\\wwwroot\\consumer.html",
+      "SourceId": "Day2",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\ITI\\API\\Day2\\Day2\\wwwroot\\",
+      "BasePath": "_content/Day2",
+      "RelativePath": "consumer.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\consumer.html"
+    }
+  ]
 }

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
+
 namespace Day2
 {
     public class Program
@@ -13,6 +15,17 @@ namespace Day2
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(corsOptions =>
+            {
+                corsOptions.AddPolicy("wpfApp", corsPolicyBuilder =>
+                {
+                    corsPolicyBuilder.AllowAnyOrigin()//Allow all ports
+                    .AllowAnyHeader()// any request header
+                    .AllowAnyMethod();// any request method
+
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -21,6 +34,10 @@ namespace Day2
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("wpfApp"); // To Allow consumers from diffrent port 
+
+            app.UseStaticFiles(); // To Allow Consumer Page in the same port
 
             app.UseAuthorization();
 

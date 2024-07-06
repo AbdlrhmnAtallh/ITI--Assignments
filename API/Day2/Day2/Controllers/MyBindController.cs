@@ -47,6 +47,5 @@ namespace Day2.Controllers
             return Ok(e);
         }
 
-
     }
 }
